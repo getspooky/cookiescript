@@ -1,0 +1,15 @@
+import {ERR_BASE_EXCEPTION} from './ERR_BASE_EXCEPTION';
+
+export class ERR_HTTP_NAME extends ERR_BASE_EXCEPTION {
+  /**
+   * Exception
+   *
+   * @param message
+   * @param fileName
+   * @constructor
+   */
+  constructor(message, fileName = null) {
+    // Overriding both message , status code and fileName.
+    super(message || '', 500, fileName);
+  }
+}

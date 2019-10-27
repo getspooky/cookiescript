@@ -1,0 +1,28 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "10"
+        }
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./"],
+      "alias": {
+        "@app": "./app/",
+        "@server": "./server/",
+        "@support": "./support/",
+        "@storage": "./storage/",
+        "@provider": "./providers/",
+        "@config": "./config/",
+        "@package": "./packages/",
+        "@console": "./console/"
+      }
+    }]
+  ]
+}

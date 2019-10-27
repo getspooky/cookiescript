@@ -1,0 +1,8 @@
+{
+  "register.username"   : "用户名",
+  "register.email"      : "电邮地址",
+  "register.password"   : "密码",
+  "register.confirm_password" : "确认密码",
+  "register.agreement" : "我接受条款和条件",
+  "register.submit"    : "注册"
+}

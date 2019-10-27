@@ -1,0 +1,6 @@
+coverage/
+node_modules/
+build/
+server/*.test.js
+app/*.test.js
+e2e

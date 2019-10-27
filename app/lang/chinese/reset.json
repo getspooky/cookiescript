@@ -1,0 +1,6 @@
+{
+  "reset.password": "密码",
+  "reset.confirm_password": "确认密码",
+  "reset.submit": "重设密码",
+  "reset.success": "你已经成功更改密码！"
+}

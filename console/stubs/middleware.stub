@@ -1,0 +1,20 @@
+/**
+ * Middleware Function.
+ *
+ * @export
+ * @function
+ * @name middleware
+ * @param req
+ * @param res
+ * @param next
+ * @returns {void}
+ */
+export function MIDDLEWARE_NAME(req, res, next) {
+  try {
+    //
+    next();
+  } catch (err) {
+    // Handle Error.
+    next(err);
+  }
+}

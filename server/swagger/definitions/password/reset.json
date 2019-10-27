@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "password": {
+      "type": "string",
+      "format": "password",
+      "minLength": 8
+    },
+    "token": {
+      "type": "string",
+      "minLength": "90"
+    }
+  }
+}

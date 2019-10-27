@@ -1,0 +1,9 @@
+import {Schema} from 'mongoose';
+
+/* User Schema */
+export const SCHEMA_NAME = Schema(
+  {
+   //
+  },
+  {timestamps: true}
+);

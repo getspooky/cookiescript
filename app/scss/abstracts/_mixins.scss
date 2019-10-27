@@ -1,0 +1,60 @@
+/// Generates cross-browser-compatible `box-shadow` for a given element.
+@mixin x-box-shadow ($values...) {
+  -webkit-box-shadow: $values; // iOS Safari 3.2 - 4.3, Android 2.1+
+  box-shadow: $values;
+}
+
+/// Generates `background-size` output for a given element.
+@mixin x-background-size ($values...) {
+  -webkit-background-size: $values; // For Android 2.x
+  background-size: $values;
+}
+
+/// Generates cross-browser-compatible `border-radius` for a given element.
+@mixin x-border-radius ($values) {
+  -webkit-border-radius: $values; // iOS Safari 3.2, Android 2.1
+  border-radius: $values;
+}
+
+/// Generates `background-size` output for a given element.
+@mixin x-background-size ($values...) {
+  -webkit-background-size: $values; // For Android 2.x
+  background-size: $values;
+}
+
+/// Generates start-btn output for a given element.
+@mixin start-btn($box-shadow...) {
+  text-align: center;
+  display: inline-block;
+  margin:5px;
+  font-weight: bold;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  box-shadow:$box-shadow;
+  cursor: pointer;
+  &:active{
+    box-shadow: none;
+    position: relative;
+    top: .2em;
+  }
+}
+// mixin that let you change placeholder font color.
+@mixin placeholder-color($color,$line:2rem) {
+  &::-webkit-input-placeholder { /* WebKit browsers */
+    color: $color;
+    line-height:$line;
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $color;
+    line-height:$line;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $color;
+    line-height:$line;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: $color;
+    line-height:$line;
+  }
+}

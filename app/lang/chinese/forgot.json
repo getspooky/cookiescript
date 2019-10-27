@@ -1,0 +1,5 @@
+{
+  "forgot.email": "电子邮件地址",
+  "forgot.submit": "发送密码重置链接",
+  "forgot.success": "请检查您的电子邮件，然后单击提供的链接以重置密码"
+}

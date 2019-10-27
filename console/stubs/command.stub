@@ -1,0 +1,41 @@
+export default {
+  /**
+   * The name and signature of the console command.
+   *
+   * @var string
+   */
+  signature: '',
+
+  /**
+   * The alias of the console command.
+   *
+   * @var {string}
+   */
+  alias: '',
+
+  /**
+   * The options of the command.
+   *
+   * @var {string}
+   */
+  option: '',
+
+  /**
+   * The console command description.
+   *
+   * @var string
+   */
+  description: '',
+
+  /**
+   * Execute the console command.
+   *
+   * @export
+   * @function
+   * @name handle
+   * @returns {void}
+   */
+  handle() {
+    //
+  },
+};
