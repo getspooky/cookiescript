@@ -50,7 +50,7 @@ If you've found a problem in Mernless which is not a security risk, do a search 
 ## How Can I Help?
 
 - Contribute to the core repository.
-- Ask your employer to use Mernless dashboard in projects.
+- Ask your employer to use Mernless in projects.
 - Make a tutorial that you explain Mernless.
 - Follow our Mernless repository.
 
