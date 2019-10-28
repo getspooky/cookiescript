@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://drive.google.com/uc?id=14s0h9qffMNPNH_BM4lSVVlSQ_dR4x5-J" />
-  <h4 align="center">Boilerplate for getting started with MERN stack 👩‍💻👨‍💻</h4> 
+  <h4 align="center">Advance Boilerplate for getting started with MERN stack 👩‍💻👨‍💻</h4> 
 </p>
 
 ## The Benefits of the MERN Stack
