@@ -1,6 +1,6 @@
 FROM node:10.16.3-alpine
 
-LABEL MAINTAINER Yasser Ameur El Idrissi <yasser@mastercode.com>
+LABEL MAINTAINER Yasser Ameur El Idrissi <getspookydev@gmail.com>
 
 WORKDIR /app
 
