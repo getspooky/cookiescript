@@ -1,6 +1,4 @@
-import {
-  env
-} from 'support/helpers/common';
+import {env} from 'support/helpers/common';
 
 export default {
   // Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.

@@ -13,6 +13,13 @@
   "contributors": [
     "Yasser Ameur El Idrissi"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getspooky/Mernless.git"
+  },
+  "bugs": {
+    "url": "https://github.com/getspooky/Mernless/issues"
+  },
   "devDependencies": {
     "@babel/node": "^7.5.5",
     "@babel/preset-env": "^7.6.3",
