@@ -6,11 +6,11 @@ export default function() {
     <div className="content">
       <img src={require('../assets/cover.jpg')} alt="welcome" />
       <div className="links">
-        <Link to="/">Docs</Link>
-        <Link to="/">Guides</Link>
-        <Link to="/">News</Link>
-        <Link to="/">Blog</Link>
-        <Link to="/">GitHub</Link>
+        <Link to="https://getspooky.github.io/Mernless/">Docs</Link>
+        <Link to="https://github.com/getspooky/Mernless/issues">Issues</Link>
+        <Link to="https://github.com/getspooky/Mernless/pulls">Pull Requests</Link>
+        <Link to="https://beerpay.io/getspooky/Mernless">Sponsor</Link>        
+        <Link to="https://github.com/getspooky/Mernless">GitHub</Link>
       </div>
     </div>
   );
