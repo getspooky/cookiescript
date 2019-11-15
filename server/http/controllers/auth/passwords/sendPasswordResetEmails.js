@@ -38,7 +38,7 @@ export async function sendResetLinkResponse(req, res, next) {
         errors: errors.array()
       });
     }
-    // Get the password reset credentials from the request.
+    // Get the email reset credentials from the request.
     const {
       email
     } = req.body;
