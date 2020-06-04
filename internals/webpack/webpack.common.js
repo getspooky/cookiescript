@@ -7,10 +7,11 @@
  * file that was distributed with this source code.
  */
 
+const path = require('path');
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {htmlTemplate} = require('./paths');
+const htmlTemplate = path.resolve(__dirname, '../', 'public', 'index.html');
 
 // files regexes
 const jsRegex = /\.(jsx?)$/;
