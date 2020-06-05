@@ -15,8 +15,8 @@ export function cors(req, res, next) {
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept, Authorization',
   );
-  // The Access-Control-Allow-Methods header specifies the method or methods allowed when
-  // accessing the resource
+  // The Access-Control-Allow-Methods header specifies the method or methods
+  // allowed when accessing the resource
   res.setHeader('Access-Control-Allow-Methods', '*');
   next();
 }
@@ -34,5 +34,14 @@ export function xssFilter(req, res, next) {
   // Chrome and Safari that stops pages from loading when they detect reflected cross-site scripting (XSS) attacks
   // Learn more : https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
   res.setHeader('X-XSS-Protection', '1; mode=block');
+  next();
+}
+
+// Deny X-Frame-Options.
+export function frameguard(req, res, next) {
+  // The X-Frame-Options HTTP response header can be used to indicate whether or not a browser
+  // should be allowed to render a page in a <frame>, <iframe>, <embed> or <object> . Sites can use
+  // this to avoid clickjacking attacks, by ensuring that their content is not embedded into other sites.
+  res.setHeader('X-Frame-Options', 'deny');
   next();
 }
