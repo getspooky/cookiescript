@@ -8,7 +8,7 @@
  */
 
 // Cross-Origin Resource Sharing.
-export function cors(req, res, next) {
+export function enableCors(req, res, next) {
   // "*" wildcard, to tell browsers to allow any origin to rules the resource.
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader(
