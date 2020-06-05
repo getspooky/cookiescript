@@ -117,7 +117,6 @@
     "sweetalert2": "^8.18.5",
     "uid": "^0.0.2",
     "urlencode": "^1.1.0",
-    "uuid": "^3.3.3",
     "winston": "^3.2.1"
   },
   "scripts": {
