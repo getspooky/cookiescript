@@ -45,3 +45,9 @@ export function frameGuard(req, res, next) {
   res.setHeader('X-Frame-Options', 'deny');
   next();
 }
+
+// Disable Cache Control Attack.
+export function noCache(req, res, next) {
+  res.setHeader('Cache-Control', 'no-store');
+  next();
+}
