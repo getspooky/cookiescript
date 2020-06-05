@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-//Cross-Origin Resource Sharing.
+// Cross-Origin Resource Sharing.
 export function cors(req, res, next) {
   // "*" wildcard, to tell browsers to allow any origin to rules the resource.
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -18,5 +18,12 @@ export function cors(req, res, next) {
   // The Access-Control-Allow-Methods header specifies the method or methods allowed when
   // accessing the resource
   res.setHeader('Access-Control-Allow-Methods', '*');
+  next();
+}
+
+// Disable X-Powered-By header.
+export function hidePoweredBy(req, res, next) {
+  // removes the X-Powered-By header
+  res.removeHeader('X-Powered-By');
   next();
 }
