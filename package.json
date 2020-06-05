@@ -20,6 +20,13 @@
   "bugs": {
     "url": "https://github.com/getspooky/Mernless/issues"
   },
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "serve": "nodemon --exec babel-node server/server.js",
+    "test": "jest",
+    "build": "webpack",
+    "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
+  },
   "devDependencies": {
     "@babel/node": "^7.5.5",
     "@babel/preset-env": "^7.6.3",
@@ -87,7 +94,6 @@
     "express-validator": "^6.2.0",
     "ip": "^1.1.5",
     "js-cookie": "^2.2.1",
-    "js-yaml": "^3.14.0",
     "jsonwebtoken": "^8.5.1",
     "md5": "^2.2.1",
     "method-override": "^3.0.0",
@@ -120,13 +126,6 @@
     "uid": "^0.0.2",
     "urlencode": "^1.1.0",
     "winston": "^3.2.1"
-  },
-  "scripts": {
-    "start": "webpack-dev-server --open",
-    "serve": "nodemon --exec babel-node server/server.js",
-    "test": "jest",
-    "build": "webpack",
-    "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
   },
   "browserslist": {
     "production": [
