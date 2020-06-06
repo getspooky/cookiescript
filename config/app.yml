@@ -1,0 +1,20 @@
+# Application Configuration
+
+# This value is the name of your application. This value is used when the
+# mern-boilerplate needs to place the application's name in a web browser
+# or notification.
+
+default:
+  name:
+
+# Application URL
+url:
+  react:
+  nodejs:    
+
+# Application Environment
+# This value determines the "environment" your application is currently
+# running in. 
+# Supported Application Env: production, developement, test
+env:
+  type:     
