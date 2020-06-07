@@ -30,14 +30,24 @@ const logger = {
       console.log(`Tunnel initialised ${chalk.green('✓')}`);
     }
 
-    console.log(`
-${chalk.bold('Access URLs:')}${divider}
-Localhost: ${chalk.magenta(`http://${host}:${port}`)}
+    console.log(`${chalk.bold('Access URLs:')}${divider}
+      Localhost: ${chalk.magenta(`http://${host}:${port}`)}
       LAN: ${chalk.magenta(`http://${ip.address()}:${port}`) +
         (tunnelStarted
           ? `\n    Proxy: ${chalk.magenta(tunnelStarted)}`
           : '')}${divider}
-${chalk.blue(`Press ${chalk.italic('CTRL-C')} to stop`)}
+      ${chalk.blue(`Press ${chalk.italic('CTRL-C')} to stop`)}
     `);
   },
+
+  // Called when database starts on given port w/o errors
+  dbStarted: (driver , db_name) => {
+    console.log(
+      `${chalk.bold.green('✅')} %s %s Connected successfully`,
+       driver, name
+    );
+  },
+
 };
+
+export default logger;
