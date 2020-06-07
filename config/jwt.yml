@@ -1,0 +1,10 @@
+# JSON Web Token 
+# is an internet standard for creating data with optional signature and/or 
+# optional encryption whose payload holds JSON that asserts some number of claims. 
+
+jwt:
+  # Symmetric Algorithms: HS256, HS384 & HS512 
+  # Asymmetric Algorithms: RS256, RS384 & RS512 / ES256, ES384 & ES512
+  algorithm:   
+  secret:
+  expiration:
