@@ -1,0 +1,25 @@
+# Default Mailer
+# This option controls the default mailer that is used to send any email
+# messages sent by your application. Alternative mailers may be setup
+
+default:
+  name:
+
+# Mailer Configurations
+# Here you may configure all of the mailers used by your application plus
+# their respective settings.
+# For testing feel free to use https://mailtrap.io/.
+
+mailer:
+  driver:
+  host:
+  port:
+  user:
+  pass:
+
+
+# You may wish for all e-mails sent by your application to be sent from  
+# the same address. Here, you may specify a name and address that is
+# used globally for all e-mails that are sent by your application.
+sender:
+  address:
