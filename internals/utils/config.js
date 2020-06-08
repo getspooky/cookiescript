@@ -8,24 +8,28 @@
  */
 
 import fs from 'fs';
-import yml from 'js-yaml';
+import path from 'path';
+import yaml from 'js-yaml';
 
 // The config function gets the value of a configuration variable.
 // The configuration values may be accessed using "@" syntax,
 // which includes the name of the file and the option you wish to access
 // example :
 //    config('app@url.host')
-export function config(path) {
-  if(typeof path === 'undefined' || typeof path !== 'string' || path === ''){
+function config(value) {
+  if(typeof value === 'undefined' || typeof value !== 'string' || value === ''){
     throw new TypeError('The path is required');
   }
-  const extract = path.split('@');
-  const fileContents = fs.readFileSync(`./${extract[0]}.yml`, 'utf8');
+  const extract = value.split('@');
+  const config_path = path.join(__dirname,`../../config/${extract[0]}.yml`);
+  const fileContents = fs.readFileSync(config_path, 'utf8');
   const data = yaml.safeLoad(fileContents);
   return getValue(data, extract[1]);
 }
 
 // return value from given object
 function getValue(obj,keys) {
-  return keys.split('.').reduce((o, k) => (o || {})[k], object);
+  return keys.split('.').reduce((o, k) => (o || {})[k], obj);
 }
+
+export default config;
