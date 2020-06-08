@@ -8,11 +8,14 @@
  */
 
 import http from 'http';
-import app from 'server/App.js';
+import app from 'server/App';
+import routes from 'internals/bootstrap/routes'
+import logger from 'internals/bootstrap/logger';
+import config from 'internals/utils/config';
 
 /*
 |------------------------------------------------------------------------------
-| Create The Server
+| Register Routes and Create The Nodejs Server
 |------------------------------------------------------------------------------
 |
 | By default mern-boilerplate uses http protocol but you can use http2 or https.
@@ -21,5 +24,15 @@ import app from 'server/App.js';
 |
 */
 
+app.use(routes);
+
 const httpServer = http.createServer(app);
-httpServer.listen(3000);
+const httpHost = config('app@url.host');
+const httpPort = config('app@url.port');
+
+httpServer.listen(httpPort, function(err) {
+  if(err) {
+    logger.error(err);
+  }
+  logger.appStarted(httpPort, httpHost, false);
+});
