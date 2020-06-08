@@ -9,12 +9,12 @@ default:
 
 # Application URL
 url:
-  react:
-  nodejs:    
+  host:
+  port:
 
 # Application Environment
 # This value determines the "environment" your application is currently
-# running in. 
+# running in.
 # Supported Application Env: production, developement, test
 env:
-  type:     
+  type:
