@@ -7,8 +7,9 @@
  * file that was distributed with this source code.
  */
 
+const path = require('path');
 const webpack = require('webpack');
-const {outputPath} = require('./paths');
+const outputPath = path.resolve(__dirname, '../', 'build');
 
 // files regexes
 const cssRegex = /\.(css|scss)$/;
