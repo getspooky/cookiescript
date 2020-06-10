@@ -9,9 +9,11 @@
 
 import http from 'http';
 import app from 'server/App';
-import routes from 'internals/bootstrap/routes'
-import logger from 'internals/bootstrap/logger';
 import config from 'internals/utils/config';
+import routes from './routes'
+import logger from './logger';
+import security from './security';
+import ehandler from './ehandler';
 
 /*
 |------------------------------------------------------------------------------
@@ -24,7 +26,21 @@ import config from 'internals/utils/config';
 |
 */
 
+// set various HTTP headers to help protect your server
+app.use(
+  composeMiddleware(
+    security.enableCors,
+    security.hidePoweredBy,
+    security.xssFilter,
+    security.frameGuard,
+    security.noCache
+  )
+);
+
 app.use(routes);
+
+// handle Errors
+app.use(ehandler);
 
 const httpServer = http.createServer(app);
 const httpHost = config('app@url.host');
