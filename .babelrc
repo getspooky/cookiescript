@@ -9,5 +9,16 @@
       }
     ],
     "@babel/preset-react"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./"],
+      "alias": {
+        "server": "./server/",
+        "internals": "./internals",
+        "database": "./database",
+        "views": "./views"
+      }
+    }],
   ]
 }
