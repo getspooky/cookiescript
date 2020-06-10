@@ -7,27 +7,27 @@
  * file that was distributed with this source code.
  */
 
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const {outputPath, jsFolder, cssFolder} = require('./paths');
-
+const outputPath = path.resolve(__dirname, '../', 'build');
 // files regexes
-const cssRegex = /\.(css|scss)$/;
+const cssRegExp = /\.(css|scss)$/;
 const assetNameRegExp = /\.optimize\.css$/g;
 
 module.exports = {
   mode: 'production',
   output: {
-    filename: `${jsFolder}/[name].[hash].js`,
+    filename: 'js/[name].[hash].js',
     path: outputPath,
-    chunkFilename: `${jsFolder}/[name].[chunkhash].js`,
+    chunkFilename: 'js/[name].[chunkhash].js',
     publicPath: '/',
   },
   module: {
     rules: [
       {
-        test: cssRegex,
+        test: cssRegExp,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -62,8 +62,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: `${cssFolder}/[name].css`,
-      chunkFilename: `${cssFolder}/[name].css`,
+      filename: 'css/[name].css',
+      chunkFilename: 'css/[name].css',
     }),
     new CleanWebpackPlugin({
       // Simulate the removal of files
