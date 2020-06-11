@@ -1,59 +1,70 @@
-<p align="center">
-  <img src="https://drive.google.com/uc?id=14s0h9qffMNPNH_BM4lSVVlSQ_dR4x5-J" />
-  <h4 align="center">Advance Boilerplate for getting started with MERN stack 👩‍💻👨‍💻</h4> 
-</p>
+<img src="docs/media/Hello.png">
 
-## The Benefits of the MERN Stack
+<sub>Created by <a href="https://github.com/getspooky">getspooky</a> and maintained with ❤️ by an amazing <a href="https://github.com/getspooky/CookieScript/graphs/contributors">team of developers</a>.</sub>
 
-The main advantage for developers using the MERN stack is that every line of code is written in JavaScript. This is a programming language that’s used everywhere, both for client-side code and server-side code. With one language across tiers, there’s no need for context switching.
-For tech stack with multiple programming languages, developers have to figure out how to interface them together. With the JavaScript stack, developers only need to be proficient in JavaScript and JSON.
-Overall, using the MERN stack enables developers to build highly efficient web applications.
+![GitHub](https://img.shields.io/github/license/getspooky/CookieScript?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/getspooky/CookieScript?style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/getspooky/CookieScript?style=for-the-badge)
 
-## About Mernless
+CookieScript Boilerplate uses familiar tools and implements best practices around them to provide you a SOLID development experience.
+This project does not impose a specific development philosophy or framework, so you're free to architect your code in the way that you want.
 
-Mernless provides a powerful Boilerplate which makes it easy to build isomorphic apps using Mongo, Express, React and NodeJS. It minimises the setup time and gets you up to speed using proven technologies.
-Mernless takes the pain out of development by easing common tasks used in many web projects, such as:
+- Website & Documentation: https://bit.ly/3dlfDwm
+- Producthunt: https://www.producthunt.com/posts/routine-app
+- Dev: https://bit.ly/2ZUyzy3
+- Medium: https://bit.ly/2ZRYtCI
 
-- Scalable and Maintainable Mern architecture
-- Robust routing
-- Database caching
-- JWT authentication
-- (Redux, Mail, Swagger, Docker, Travis) integration
-- Command-line interface
+## Features
+
+<dl>
+  <dt>Quick scaffolding</dt>
+  <dd>CookieScript offers a built-in tool for the command line is known as Geek which allows performing the majority of those tedious and repetitive programming tasks that many `JAVASCRIPT` developers avoid performing manually.</dd>
+
+ <dt>Next generation JavaScript</dt>
+ <dd>Use template strings, object destructuring, arrow functions, JSX syntax and more.</dd>
+
+  <dt>Intact Security</dt>
+  <dd>Application security is one of the most important factors in web application development. While developing an application, a programmer needs to take effective ways to secure the application.</dd>
+
+  <dt>Authentication</dt>
+  <dd>Authentication is the most important factor in a web application, and developers need to spend a lot of time writing the authentication code. CookieScript contains an inbuilt authentication system, you only need to configure models, views, and controllers to make the application work.</dd>
+
+  <dt>Offline-first</dt>
+  <dd>The next frontier in performant web apps: availability without a network connection from the instant your users load the app.</dd>
+
+  <dt>Mail Integration</dt>
+  <dd>CookieScript uses free feature-rich library `NodeMailer` to send emails. Using the library function, we can easily send emails without too many hassles. The e-mail templates are loaded in the same way as views, which means you can use the Blade syntax and inject data into your templates.</dd>
+
+  <dt>Database Caching</dt>
+  <dd>CookieScript uses `redis` caching service in order to create high performance services</dd>
+
+</dl>
+
+<sub><i>Keywords: `React.js`, Redux, Hot Reloading, ESNext, Babel, react-router, Offline First, `Nodejs`, `express`, `mongoDB` ,cli and more...</i></sub>
 
 ## System Requirements
 
-Before you install Mernless, you should check to make sure that your system has the proper prerequisites installed. These include
-
-- Node.js >= 8.0.0
+Before you install `CookieScript`, you should check to make sure that your system has the proper prerequisites installed. These include: 
+- Node >= 8.0.0 
 - npm >= 6.10.3
+- mongoDB >= 3.6.8
 
-## Install
 
-- Clone the repo and cd into it
-- Rename or copy .env.example file to .env
-- Run node geek generate:key .env
-- Set your database credentials in your .env file
-- Run npm install
-- Run npm run serve
-- Run npm run start
-- Visit localhost:8000 in your browser
+## Quick start
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Mernless, please send an e-mail to Yasser Ameur El Idrissi via `getspookydev@gmail.com` . All security vulnerabilities will be promptly addressed.
-
-## Bug Report
-
-If you've found a problem in Mernless which is not a security risk, do a search on GitHub under Issues in case it has already been reported. If you are unable to find any open GitHub issues addressing the problem you found, your next step will be to open a new one. (See the next section for reporting security issues.) your issue should contain a title and a clear description of the issue. You should also include as much relevant information as possible and a code sample that demonstrates the issue. The goal of a bug report is to make it easy for yourself - and others - to replicate the bug and develop a fix. Remember, bug reports are created in the hope that others with the same problem will be able to collaborate with you on solving it. Do not expect that the bug report will automatically see any activity or that others will jump to fix it. Creating a bug report serves to help yourself and others start on the path of fixing the problem.
+2.  Clone this repo using `git clone --depth=1 https://github.com/getspooky/CookieScript.git <YOUR_PROJECT_NAME>`
+3.  Move to the appropriate directory: `cd <YOUR_PROJECT_NAME>`.<br />
+4.  Run `npm run dev` in order to install dependencies and clean the git repo.<br />
+    _At this point you can run `npm start` to see the example app at `http://localhost:8080`._
+5.  Run `npm run clean` to delete the example app.
 
 ## How Can I Help?
 
 - Contribute to the core repository.
-- Ask your employer to use Mernless in projects.
-- Make a tutorial that you explain Mernless.
-- Follow our Mernless repository.
+- Ask your employer to use `CookieScript` in projects.
+- Make a tutorial that you explain it.
+- Follow our repository.
 
 ## License
-
-The Mernless Boilerplate is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+4200
+This project is licensed under the MIT license, Copyright (c) 2019 Yasser Ameur El Idrissi. For more information see `LICENSE.md`.
