@@ -77,7 +77,6 @@
     "compose-middleware": "^5.0.1",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
-    "dotenv": "^8.2.0",
     "encodeurl": "^1.0.2",
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
