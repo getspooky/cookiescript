@@ -108,7 +108,6 @@
     "redis": "^2.8.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^4.4.0",
     "sweetalert2": "^8.18.5",
     "uid": "^0.0.2",
     "urlencode": "^1.1.0",
