@@ -93,7 +93,6 @@
     "node-sass": "^4.12.0",
     "nodemailer": "^6.3.0",
     "prop-types": "^15.7.2",
-    "pug": "^2.0.4",
     "randomcolor": "^0.5.4",
     "randomstring": "^1.1.5",
     "react": "^16.10.2",
