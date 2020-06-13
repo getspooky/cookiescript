@@ -1,4 +1,4 @@
-<img src="docs/media/Hello.png">
+<img src="docs/media/Hello.png" width="100%">
 
 <sub>Created by <a href="https://github.com/getspooky">getspooky</a> and maintained with ❤️ by an amazing <a href="https://github.com/getspooky/CookieScript/graphs/contributors">team of developers</a>.</sub>
 
@@ -17,6 +17,11 @@ This project does not impose a specific development philosophy or framework, so 
 
  <dt>Next generation JavaScript</dt>
  <dd>Use template strings, object destructuring, arrow functions, JSX syntax and more.</dd>
+
+  <dt>UI built with Tailwind CSS</dt>
+  <dd>CookieScript uses <a href="https://tailwindcss.com/" target="_blank">tailwindcss</a>
+   . An elegant and simple solution to solving the issues we all face when refactoring or removing dead HTML
+  </dd>
 
   <dt>Intact Security</dt>
   <dd>Application security is one of the most important factors in web application development. While developing an application, a programmer needs to take effective ways to secure the application.</dd>
