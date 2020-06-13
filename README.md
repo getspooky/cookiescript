@@ -9,16 +9,11 @@
 CookieScript Boilerplate uses familiar tools and implements best practices around them to provide you a SOLID development experience.
 This project does not impose a specific development philosophy or framework, so you're free to architect your code in the way that you want.
 
-- Website & Documentation: https://bit.ly/3dlfDwm
-- Producthunt: https://www.producthunt.com/posts/routine-app
-- Dev: https://bit.ly/2ZUyzy3
-- Medium: https://bit.ly/2ZRYtCI
-
 ## Features
 
 <dl>
   <dt>Quick scaffolding</dt>
-  <dd>CookieScript offers a built-in tool for the command line is known as Geek which allows performing the majority of those tedious and repetitive programming tasks that many `JAVASCRIPT` developers avoid performing manually.</dd>
+  <dd>CookieScript offers a built-in tool for the command line is known as Geek which allows performing the majority of those tedious and repetitive programming tasks that many JavaScript developers avoid performing manually.</dd>
 
  <dt>Next generation JavaScript</dt>
  <dd>Use template strings, object destructuring, arrow functions, JSX syntax and more.</dd>
@@ -33,10 +28,10 @@ This project does not impose a specific development philosophy or framework, so 
   <dd>The next frontier in performant web apps: availability without a network connection from the instant your users load the app.</dd>
 
   <dt>Mail Integration</dt>
-  <dd>CookieScript uses free feature-rich library `NodeMailer` to send emails. Using the library function, we can easily send emails without too many hassles. The e-mail templates are loaded in the same way as views, which means you can use the Blade syntax and inject data into your templates.</dd>
+  <dd>CookieScript uses free feature-rich library NodeMailer to send emails. Using the library function, we can easily send emails without too many hassles. The e-mail templates are loaded in the same way as views, which means you can use the Blade syntax and inject data into your templates.</dd>
 
   <dt>Database Caching</dt>
-  <dd>CookieScript uses `redis` caching service in order to create high performance services</dd>
+  <dd>CookieScript uses redis caching service in order to create high performance services</dd>
 
 </dl>
 
@@ -44,11 +39,11 @@ This project does not impose a specific development philosophy or framework, so 
 
 ## System Requirements
 
-Before you install `CookieScript`, you should check to make sure that your system has the proper prerequisites installed. These include: 
-- Node >= 8.0.0 
+Before you install `CookieScript`, you should check to make sure that your system has the proper prerequisites installed. These include:
+
+- Node >= 8.0.0
 - npm >= 6.10.3
 - mongoDB >= 3.6.8
-
 
 ## Quick start
 
@@ -66,5 +61,5 @@ Before you install `CookieScript`, you should check to make sure that your syste
 - Follow our repository.
 
 ## License
-4200
+
 This project is licensed under the MIT license, Copyright (c) 2019 Yasser Ameur El Idrissi. For more information see `LICENSE.md`.
