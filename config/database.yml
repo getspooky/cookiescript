@@ -8,7 +8,7 @@ default:
 # Database Connections
 # Here is the database connection setup for your application.
 # Of course, examples of configuring each database platform that is
-# Supported by mern-boilerplate is shown below to make development simple.
+# Supported by CookieScript is shown below to make development simple.
 
 connections:
   mongodb:
@@ -20,7 +20,7 @@ connections:
 # Redis Databases
 # Redis is an open source, fast, and advanced key-value store that also
 # provides a richer body of commands than a typical key-value system
-# such as APC or Memcached. mern-boilerplate uses it in caching.
+# such as APC or Memcached. CookieScript uses it in caching.
 
 redis:
   expiration:
