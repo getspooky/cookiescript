@@ -1,8 +1,0 @@
-{
-  "register.username"   : "Username",
-  "register.email"      : "E-mail address",
-  "register.password"   : "Password",
-  "register.confirm_password" : "Confirm Password",
-  "register.agreement" : "I accept the terms and conditions",
-  "register.submit"    : "Register"
-}
