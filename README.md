@@ -24,8 +24,7 @@ This project does not impose a specific development philosophy or framework, so 
   </dd>
 
    <dt>SEO friendly<dt>
-  <dd>
-   There are a few problems for search engine rankings when it comes to a vanilla `React app`. We follow best practices to make your web app attractive to `Google`.  
+  <dd>There are a few problems for search engine rankings when it comes to a vanilla `React app`. We follow best practices to make your web app attractive to `Google`.  
   </dd>
 
  <dt>Intact Security</dt>
