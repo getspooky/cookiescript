@@ -23,7 +23,7 @@ This project does not impose a specific development philosophy or framework, so 
    . An elegant and simple solution to solving the issues we all face when refactoring or removing dead HTML
   </dd>
 
-   <dt>SEO friendly<dt>
+   <dt>SEO friendly</dt>
   <dd>There are a few problems for search engine rankings when it comes to a vanilla `React app`. We follow best practices to make your web app attractive to `Google`.  
   </dd>
 
