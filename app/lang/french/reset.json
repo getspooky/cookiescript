@@ -1,6 +1,0 @@
-{
-  "reset.password": "Mot de passe",
-  "reset.confirm_password": "Confirmez le mot de passe",
-  "reset.submit": "Réinitialiser le mot de passe",
-  "reset.success": "Votre mot de passe a été changé avec succès!"
-}
