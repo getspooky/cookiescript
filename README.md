@@ -18,25 +18,30 @@ This project does not impose a specific development philosophy or framework, so 
  <dt>Next generation JavaScript</dt>
  <dd>Use template strings, object destructuring, arrow functions, JSX syntax and more.</dd>
 
-  <dt>UI built with Tailwind CSS</dt>
+ <dt>UI built with Tailwind CSS</dt>
   <dd>CookieScript uses <a href="https://tailwindcss.com/" target="_blank">tailwindcss</a>
    . An elegant and simple solution to solving the issues we all face when refactoring or removing dead HTML
   </dd>
 
-  <dt>Intact Security</dt>
+   <dt>SEO friendly<dt>
+  <dd>
+   There are a few problems for search engine rankings when it comes to a vanilla `React app`. We follow best practices to make your web app attractive to `Google`.  
+  </dd>
+
+ <dt>Intact Security</dt>
   <dd>Application security is one of the most important factors in web application development. While developing an application, a programmer needs to take effective ways to secure the application.</dd>
 
-  <dt>Authentication</dt>
+ <dt>Authentication</dt>
   <dd>Authentication is the most important factor in a web application, and developers need to spend a lot of time writing the authentication code. CookieScript contains an inbuilt authentication system, you only need to configure models, views, and controllers to make the application work.</dd>
 
-  <dt>Offline-first</dt>
-  <dd>The next frontier in performant web apps: availability without a network connection from the instant your users load the app.</dd>
+ <dt>Offline-first</dt>
+ <dd>The next frontier in performant web apps: availability without a network connection from the instant your users load the app.</dd>
 
-  <dt>Mail Integration</dt>
-  <dd>CookieScript uses free feature-rich library NodeMailer to send emails. Using the library function, we can easily send emails without too many hassles. The e-mail templates are loaded in the same way as views, which means you can use the Blade syntax and inject data into your templates.</dd>
+ <dt>Mail Integration</dt>
+ <dd>CookieScript uses free feature-rich library NodeMailer to send emails. Using the library function, we can easily send emails without too many hassles. The e-mail templates are loaded in the same way as views, which means you can use the Blade syntax and inject data into your templates.</dd>
 
-  <dt>Database Caching</dt>
-  <dd>CookieScript uses redis caching service in order to create high performance services</dd>
+<dt>Database Caching</dt>
+<dd>CookieScript uses redis caching service in order to create high performance services</dd>
 
 </dl>
 
