@@ -11,15 +11,26 @@ default:
 # For testing feel free to use https://mailtrap.io/.
 
 mailer:
-  driver:
   host:
   port:
-  user:
-  pass:
+  auth:
+    user:
+    pass:
+  # true for 465, false for other ports
+  secure:
 
-
-# You may wish for all e-mails sent by your application to be sent from  
+# You may wish for all e-mails sent by your application to be sent from
 # the same address. Here, you may specify a name and address that is
 # used globally for all e-mails that are sent by your application.
 sender:
   address:
+
+
+# When a user forgets their password and try to reset it,
+# they get a reset password email link with a token:
+# docs: https://www.npmjs.com/package/randomstring
+token:
+  length:
+  charset:
+  capitalization:
+  expiration:
