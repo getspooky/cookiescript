@@ -6,6 +6,5 @@
 # they have less time to be guessed. You may change this as needed.
 
 passwords:
-  expires:
-  token_size:
+  algo:
 
