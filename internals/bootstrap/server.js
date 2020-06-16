@@ -1,5 +1,5 @@
 /*
- * This file is part of the mern-boilerplate project.
+ * This file is part of the CookieScript project.
  *
  * (c) Yasser Ameur El Idrissi <getspookydev@gmail.com>
  *
@@ -9,33 +9,26 @@
 
 import http from 'http';
 import app from 'server/App';
+import helmet from 'helmet';
 import config from 'internals/utils/config';
 import routes from './routes'
 import logger from './logger';
-import security from './security';
 import ehandler from './ehandler';
+import database from './dbcon';
 
 /*
 |------------------------------------------------------------------------------
 | Register Routes and Create The Nodejs Server
 |------------------------------------------------------------------------------
 |
-| By default mern-boilerplate uses http protocol but you can use http2 or https.
+| By default CookieScript uses http protocol but you can use http2 or https.
 | learn more : https://nodejs.org/api/http2.html
 | leanr more : https://nodejs.org/api/https.html
 |
 */
 
 // set various HTTP headers to help protect your server
-app.use(
-  composeMiddleware(
-    security.enableCors,
-    security.hidePoweredBy,
-    security.xssFilter,
-    security.frameGuard,
-    security.noCache
-  )
-);
+app.use(helmet());
 
 app.use(routes);
 
@@ -46,8 +39,8 @@ const httpServer = http.createServer(app);
 const httpHost = config('app@url.host');
 const httpPort = config('app@url.port');
 
-httpServer.listen(httpPort, function(err) {
-  if(err) {
+httpServer.listen(httpPort, function (err) {
+  if (err) {
     logger.error(err);
   }
   logger.appStarted(httpPort, httpHost, false);
