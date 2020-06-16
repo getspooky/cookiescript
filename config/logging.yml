@@ -1,7 +1,7 @@
 # Log Node.js Applications
 
 # Here you may configure the log channels for your application. Out of
-# the box, mern-boilerplate uses the Winston PHP logging library. This gives
+# the box, CookieScript uses the Winston PHP logging library. This gives
 # you a variety of powerful log handlers / formatters to utilize.
 # level: error, warn, info, verbose, debug, silly
 
