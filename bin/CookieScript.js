@@ -7,6 +7,8 @@
  * file that was distributed with this source code.
  */
 
+const path = require('path');
+const fs = require('fs');
 const execSync = require('child_process').spawnSync;
 const compareVersions = require('compare-versions');
 const commander = require('commander');
@@ -16,6 +18,15 @@ const packageJson = require('../package.json');
 // Npm and Yarn minimal version.
 var minimalNPMVersion = packageJson.engine.npm;
 var minimalYarnVersion = packageJson.engine.yarn;
+
+// If the project is generated successfully , let's remove unnecessary files.
+var removeFiles = new Set([
+  "CHANGELOG.md",
+  "CODE_OF_CONDUCT.md",
+  "LICENSE.md",
+  "README.md",
+  "travis.yml"
+]);
 
 const program = new commander.Command(packageJson.name)
   .version(packageJson.version)
@@ -87,6 +98,14 @@ function createCookieScript(directory, useYarn = false) {
     console.error('CookieScript repository not found');
     process.exit(0);
   }
+  // removing unnecessary files.
+  console.log();
+  console.log(chalk.magenta('Removing unnecessary files...'));
+  fs.readdirSync(directory).forEach(file => {
+    if (removeFiles.has(file)) {
+      fs.removeSync(path.join(directory, file));
+    }
+  });
   // Install Packages using Yarn Or Npm.
   const pkgInstall = exec(`${!useYarn ? 'npm' : 'yarn'} install`);
   if (!pkgInstall) {
