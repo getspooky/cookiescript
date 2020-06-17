@@ -54,6 +54,16 @@ Before you install `CookieScript`, you should check to make sure that your syste
 - npm >= 6.10.3
 - mongoDB >= 3.6.8
 
+## Browser support
+
+- Google Chrome
+- Microsoft Edge
+- Firefox
+- Opera
+- Safari
+
+>This doesn't mean that `CookieScript` cannot be used in older browsers, just that we'll ensure compatibility with the ones mentioned above.
+
 ## Quick start
 
 2.  Clone this repo using `git clone --depth=1 https://github.com/getspooky/CookieScript.git <YOUR_PROJECT_NAME>`
