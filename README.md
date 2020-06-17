@@ -85,6 +85,10 @@ Before you install `CookieScript`, you should check to make sure that your syste
 - Make a tutorial that you explain it.
 - Follow our repository.
 
+## Code of Conduct
+
+In order to ensure that the CookieScript community is welcoming to all, please review and abide by the `Code of Conduct`.
+
 ## License
 
 This project is licensed under the MIT license, Copyright (c) 2019 Yasser Ameur El Idrissi. For more information see `LICENSE.md`.
