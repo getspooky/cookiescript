@@ -1,5 +1,5 @@
 /*
- * This file is part of the mern-boilerplate project.
+ * This file is part of the CookieScript project.
  *
  * (c) Yasser Ameur El Idrissi <getspookydev@gmail.com>
  *
@@ -7,7 +7,6 @@
  * file that was distributed with this source code.
  */
 
-import path from 'path';
 import winston from 'winston';
 import config from 'internals/utils/config';
 
