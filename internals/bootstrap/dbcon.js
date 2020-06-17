@@ -1,5 +1,5 @@
 /*
- * This file is part of the mern-boilerplate project.
+ * This file is part of the CookieScript project.
  *
  * (c) Yasser Ameur El Idrissi <getspookydev@gmail.com>
  *
@@ -24,7 +24,7 @@ import logger from 'internals/bootstrap/logger';
 
 // starting databases.
 (async function onDatabaseStart() {
-  // By default mern-boilerplate uses mongodb.
+  // By default CookieScript uses mongodb.
   const db_default = config('database@default.name');
   switch (db_default) {
     case 'mongodb':
@@ -43,7 +43,7 @@ async function onMongodbStart() {
   const db_host = config('database@connections.mongodb.db_host');
   const db_name = config('database@connections.mongodb.db_name');
   // If you need to create additional connections, use mongoose.createConnection.
-  const connecting = await  connect(`mongodb://${db_host}/${db_name}`,
+  const connecting = await mongoose.connect(`mongodb://${db_host}/${db_name}`,
   {
     useFindAndModify,
     useCreateIndex,
