@@ -1,5 +1,5 @@
 /*
- * This file is part of the mern-boilerplate project.
+ * This file is part of the CookieScript project.
  *
  * (c) Yasser Ameur El Idrissi <getspookydev@gmail.com>
  *
@@ -11,8 +11,9 @@ const path = require('path');
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const htmlTemplate = path.resolve(__dirname, '../', 'public', 'index.html');
-
+//
+const htmlTemplate = path.resolve(__dirname, '../../', 'public', 'index.html');
+const entry = path.resolve(__dirname, '../../', 'views', 'index.jsx');
 // files regexes
 const jsRegex = /\.(jsx?)$/;
 const assetRegex = /\.(png|jpg|gif|svg)$/;
@@ -20,13 +21,12 @@ const fontRegex = /\.(ttf|eot|woff|woff2|)$/;
 
 module.exports = {
   stats: 'errors-only',
-  entry: './views/index.jsx',
+  entry,
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.css', '.scss'],
+    extensions: ['.js', '.jsx', '*'],
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: jsRegex,
         exclude: /node_modules/,
         use: ['babel-loader'],
@@ -42,14 +42,12 @@ module.exports = {
       },
       {
         test: assetRegex,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'assets/',
-            },
+        use: [{
+          loader: 'file-loader',
+          options: {
+            outputPath: 'assets/',
           },
-        ],
+        }, ],
       },
     ],
   },
