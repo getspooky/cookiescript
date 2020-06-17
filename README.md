@@ -17,11 +17,17 @@ This project does not impose a specific development philosophy or framework, so 
 
  <dt>Next generation JavaScript</dt>
  <dd>Use template strings, object destructuring, arrow functions, JSX syntax and more.</dd>
+ 
+ <dt>No Lock-In</dt>
+ <dd>Under the hood, we use webpack, Babel, ESLint, and other amazing projects to power your app.</dd>
 
  <dt>UI built with Tailwind CSS</dt>
   <dd>CookieScript uses <a href="https://tailwindcss.com/" target="_blank">tailwindcss</a>
    . An elegant and simple solution to solving the issues we all face when refactoring or removing dead HTML
   </dd>
+
+ <dt>Less to Learn</dt>
+ <dd>You don't need to learn and configure many build tools. Instant reloads help you focus on development. When it's time to deploy, your bundles are optimized automatically.</dd>
 
    <dt>SEO friendly</dt>
   <dd>There are a few problems for search engine rankings when it comes to a vanilla `React app`. We follow best practices to make your web app attractive to `Google`.  
@@ -54,6 +60,16 @@ Before you install `CookieScript`, you should check to make sure that your syste
 - npm >= 6.10.3
 - mongoDB >= 3.6.8
 
+## Browser support
+
+- Google Chrome
+- Microsoft Edge
+- Firefox
+- Opera
+- Safari
+
+>This doesn't mean that `CookieScript` cannot be used in older browsers, just that we'll ensure compatibility with the ones mentioned above.
+
 ## Quick start
 
 2.  Clone this repo using `git clone --depth=1 https://github.com/getspooky/CookieScript.git <YOUR_PROJECT_NAME>`
@@ -68,6 +84,10 @@ Before you install `CookieScript`, you should check to make sure that your syste
 - Ask your employer to use `CookieScript` in projects.
 - Make a tutorial that you explain it.
 - Follow our repository.
+
+## Code of Conduct
+
+In order to ensure that the CookieScript community is welcoming to all, please review and abide by the `Code of Conduct`.
 
 ## License
 
