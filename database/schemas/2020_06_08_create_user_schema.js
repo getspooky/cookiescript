@@ -1,5 +1,5 @@
 /*
- * This file is part of the mern-boilerplate project.
+ * This file is part of the CookieScript project.
  *
  * (c) Yasser Ameur El Idrissi <getspookydev@gmail.com>
  *
@@ -10,8 +10,9 @@
 import mongoose from 'mongoose';
 import config from 'internals/utils/config';
 
-const expires = config('auth@passwords.expires');
-const token_size = config('auth@passwords.token_size');
+// mailer configuration
+var expires = config('mailer@token.expiration');
+var length = config('mailer@token.lenght');
 
 /* User Schema 2020_06_08_create_user_schema */
 const CreateUserSchema = mongoose.Schema(
@@ -46,12 +47,14 @@ const CreateUserSchema = mongoose.Schema(
       token: {
         type: String,
         required: false,
-        length: token_size,
+        length: length,
         expires,
       },
     },
   },
-  {timestamps: true}
+  {
+    timestamps: true
+  }
 );
 
 export default CreateUserSchema;
