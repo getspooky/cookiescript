@@ -1,5 +1,5 @@
 /*
- * This file is part of the mern-boilerplate project.
+ * This file is part of the CookieScript project.
  *
  * (c) Yasser Ameur El Idrissi <getspookydev@gmail.com>
  *
@@ -8,19 +8,20 @@
  */
 
 import React from 'react';
-import Router from 'react-router-dom';
+import { withRouter, Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // Protect private routes for unauthorized access.
-function PrivateRoute({component: Component, ...rest}) {
+function PrivateRoute({ component: Component, ...rest }) {
   return (
-    <Router.Route
+    <Route
       {...rest}
-      render={ props =>
-        localStorage.getItem('_token') !== null ?
+      render={props =>
+        localStorage.getItem('_token') !== null ? (
           <Component {...props} />
-          :
-          <Router.Redirect to="/" />
+        ) : (
+          <Redirect to="/" />
+        )
       }
     />
   );
@@ -30,4 +31,4 @@ PrivateRoute.propTypes = {
   component: PropTypes.object.isRequired,
 };
 
-export default Router.withRouter(PrivateRoute);
+export default withRouter(PrivateRoute);
