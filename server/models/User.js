@@ -1,5 +1,5 @@
 /*
- * This file is part of the mern-boilerplate project.
+ * This file is part of the CookieScript project.
  *
  * (c) Yasser Ameur El Idrissi <getspookydev@gmail.com>
  *
@@ -37,7 +37,9 @@ userSchema.statics.comparePassword = async function(password, hash) {
   if (match) {
     return true;
   } else {
-    throw new TypeError('Incorrect Password');
+    throw new TypeError(
+      'Incorrect Password! Try Another Password'
+    );
   }
 };
 
