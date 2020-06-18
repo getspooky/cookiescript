@@ -8,7 +8,7 @@
  */
 
 import mongoose from 'mongoose';
-import redis  from 'redis';
+import redis from 'redis';
 import config from 'internals/utils/config';
 import logger from 'internals/bootstrap/logger';
 
@@ -41,17 +41,13 @@ import logger from 'internals/bootstrap/logger';
 async function onMongodbStart() {
   const driver = 'mongodb';
   const db_host = config('database@connections.mongodb.db_host');
+  const db_port = config('database@connections.mongodb.db_port');
   const db_name = config('database@connections.mongodb.db_name');
+  const db_options = config('database@connections.mongodb.options');
   // If you need to create additional connections, use mongoose.createConnection.
-  const connecting = await mongoose.connect(`mongodb://${db_host}/${db_name}`,
-  {
-    useFindAndModify,
-    useCreateIndex,
-    useNewUrlParser,
-    useUnifiedTopology: true,
-  });
-  if(connecting) {
-    logger.dbStarted(driver,db_name);
+  const connecting = await mongoose.connect(`mongodb://${db_host}:${db_port}/${db_name}`, db_options);
+  if (connecting) {
+    logger.dbStarted(driver, db_name);
   }
 }
 
@@ -65,4 +61,3 @@ async function onRedisStart() {
     logger.dbStarted(driver, null);
   });
 }
-
