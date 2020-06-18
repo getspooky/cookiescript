@@ -1,14 +1,15 @@
-import {check} from 'express-validator';
-
-/**
- * Get the validation rules that apply to the request.
+/*
+ * This file is part of the CookieScript project.
  *
- * @export
- * @function
- * @returns {[ValidationChain]}
+ * (c) Yasser Ameur El Idrissi <getspookydev@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
-export default function() {
+import { check } from 'express-validator';
+
+export function Validator() {
   return [
     check('token')
       .not()
@@ -28,10 +29,11 @@ export default function() {
         const {confirm_password} = req.body;
         if (value !== confirm_password) {
           // trow error if passwords do not match
-          throw new Error("Passwords don't match");
-        } else {
-          return value;
+          throw new TypeError(
+            "Passwords don't match! Please Try Again"
+          );
         }
+        return value;
       }),
   ];
 }
