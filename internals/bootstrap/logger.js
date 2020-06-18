@@ -41,10 +41,10 @@ const logger = {
   },
 
   // Called when database starts on given port w/o errors
-  dbStarted: (driver , db_name) => {
+  dbStarted: (driver, name) => {
     console.log(
       `${chalk.bold.green('✅')} %s %s Connected successfully`,
-       driver, name
+      driver, name
     );
   },
 
