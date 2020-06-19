@@ -17,11 +17,13 @@ register:
 
 forgot:
   path: '/password/forgot'
+  method: 'post'
   controller: 'server/controllers/auth/passwords/SendPasswordResetEmails@sendResetLinkResponse'
   validator: 'server/validators/auth/passwords/ForgotPassword'
 
 Reset:
   path: '/reset/password'
+  method: 'put'
   controller: 'server/controllers/auth/passwords/ResetPassword@reset'
   validator: 'server/validators/auth/passwords/ResetPassword'
 
