@@ -1,0 +1,33 @@
+# These lines define a route using YAML configuration.
+default:
+  path: '/hello'
+  controller: 'server/controllers/Hello@SayHello'
+
+login:
+  path: '/login'
+  method: 'post'
+  controller: 'server/controllers/auth/Authenticate@login'
+  validator: 'server/validators/auth/Login'
+
+register:
+  path: '/register'
+  method: 'post'
+  controller: 'server/controllers/auth/Authenticate@register'
+  validator: 'server/validators/auth/Register'
+
+forgot:
+  path: '/password/forgot'
+  controller: 'server/controllers/auth/passwords/SendPasswordResetEmails@sendResetLinkResponse'
+  validator: 'server/validators/auth/passwords/ForgotPassword'
+
+Reset:
+  path: '/reset/password'
+  controller: 'server/controllers/auth/passwords/ResetPassword@reset'
+  validator: 'server/validators/auth/passwords/ResetPassword'
+
+profile:
+  path: '/profile'
+  controller: 'server/controllers/Profile@index'
+  middlewares:
+    - 'server/middlewares/TokenIsVerified@tokenVerification'
+    - 'server/middlewares/DetectProxy@detectProxy'
