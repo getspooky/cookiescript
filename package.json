@@ -1,7 +1,7 @@
 {
-  "name": "mernless",
+  "name": "cookiescript",
   "version": "1.0.0",
-  "description": "Boilerplate for getting started with MERN stack",
+  "description": "A highly scalable, professional boilerplate for building fast, robust and adaptable mern web apps",
   "keywords": [
     "Nodejs",
     "react",
@@ -23,7 +23,7 @@
   "scripts": {
     "start": "webpack-dev-server --open",
     "serve": "nodemon --exec babel-node internals/bootstrap/server.js",
-    "test": "jest",
+    "test": "jest --watchAll",
     "build": "webpack",
     "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
   },
@@ -74,6 +74,7 @@
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "chalk": "^2.4.2",
+    "compose-middleware": "^5.0.1",
     "encodeurl": "^1.0.2",
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
