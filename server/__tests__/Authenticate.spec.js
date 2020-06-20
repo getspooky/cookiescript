@@ -29,14 +29,11 @@ var url = {
   register: '/api/v1/register'
 }
 
+// adding /login & /register routes.
+app.use(url['login'], LoginValidator(), login);
+app.use(url['register'], RegisterValidator(), register);
 
-beforeAll(function () {
-  // adding /login & /register routes.
-  app.use(url['login'], LoginValidator(), login);
-  app.use(url['register'], RegisterValidator(), register);
-});
-
-beforeEach(async function () {
+beforeAll(async function () {
   // connect database instance.
   await mountDatabase();
 });
