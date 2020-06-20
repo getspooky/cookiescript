@@ -11,6 +11,9 @@ import express from 'express';
 import path from 'path';
 import fs from 'fs';
 import yaml from 'js-yaml';
+import {
+  compose
+} from 'compose-middleware';
 
 const Route = express.Router();
 
@@ -27,53 +30,85 @@ const Route = express.Router();
 (function registerRoutes() {
   const routes = parseYmlRoutes();
   for (let [key, value] of Object.entries(routes)) {
-    let method = 'get';
-    let validate  = () => (req,res,next) => next();
-    const middlewares = [];
-    // check yml stracture
-    if(!value.hasOwnProperty('controller') || !value.hasOwnProperty('path')) {
-      throw new TypeError('controller or path is required');
+    // default values that each route need.
+    const initState = {
+      method: 'get',
+      controller: (req, res) =>
+        res.send('👋 Hi, Welcome to <b>CookieScript</b>'),
+      validate: () => (req, res, next) => next(),
+      middlewares: [],
+    };
+    // check yml stracture.
+    if (!value.hasOwnProperty('controller')) {
+      throw new TypeError('controller is required');
     }
-    if(typeof value.controller !== 'string') {
-      throw new TypeError('controller must be string');
+    if (!value.hasOwnProperty('path')) {
+      throw new TypeError('path is required');
     }
     // check if method exists if not we use GET by default.
-    // push middlewares and validator
-    if(value.hasOwnProperty('method')) {
-      method = value.method;
+    // push middlewares and validator.
+    if (value.hasOwnProperty('method')) {
+      initState.method = value['method'];
     }
-    if(value.hasOwnProperty('middlewares')) {
-       const { path: path_middleware, fun: fun_middleware } = extractFunPath(value.controller);
-       const new_middleware_path = require(path.resolve(__dirname,'../../', path_middleware));
-       middlewares.push(new_middleware_path[fun_middleware]);
+    // each route should have one single controller.
+    // registering middlewares.
+    if (value.hasOwnProperty('middlewares')) {
+      if (!Array.isArray(value.middlewares)) {
+        throw new TypeError('Middlewares must be an array');
+      }
+      value.middlewares.forEach(middleware => {
+        const {
+          fun: funMiddleware,
+          path: pathMiddleware,
+        } = extractFunctionPath(middleware);
+        initState.middlewares.push(
+          require(path.resolve(__dirname, '../../', pathMiddleware))[funMiddleware],
+        );
+      });
     }
-    if(value.hasOwnProperty('validator')) {
-       validate = require(path.resolve(__dirname, '../../', value.validator)).Validator;
+    if (value.hasOwnProperty('controller')) {
+      const {
+        fun: funController,
+        path: pathController,
+      } = extractFunctionPath(value.controller);
+      initState.controller = require(path.resolve(
+        __dirname,
+        '../../',
+        pathController
+      ))[funController];
     }
-    // extract controller path and function
-    const { path: path_controller, fun: fun_controller } = extractFunPath(value.controller);
-    const new_controller_path = require(path.resolve(__dirname,'../../', path_controller));
-
+    if (value.hasOwnProperty('validator')) {
+      // each validator should have an exported function called Validator.
+      initState.validate = require(path.resolve(
+        __dirname,
+        '../../',
+        value.validator,
+      )).Validator;
+    }
     // init routes
-    Route[method](value.path,...middlewares ,validate() ,new_controller_path[fun_controller]);
+    Route[initState.method](
+      value.path,
+      compose(initState.middlewares),
+      initState.validate(),
+      initState.controller,
+    );
   }
 })();
 
-// return all content from Routes.yml
-function parseYmlRoutes() {
-  const routes_content = path.join(__dirname,'../../server/Routes.yml');
-  const fileContents = fs.readFileSync(routes_content, 'utf8');
-  const data = yaml.safeLoad(fileContents);
-  return data;
+// extract function and path from given string.
+function extractFunctionPath(value) {
+  const extractData = value.split('@');
+  return {
+    fun: extractData[1],
+    path: extractData[0],
+  };
 }
 
-// extract function and path
-function extractFunPath(value) {
-  const extract_data = value.split('@');
-  return {
-    path: extract_data[0],
-    fun: extract_data[1]
-  }
+// return all content from Routes.yml
+function parseYmlRoutes() {
+  const routesPath = path.join(__dirname, '../../server/Routes.yml');
+  const fileContent = fs.readFileSync(routesPath, 'utf8');
+  return yaml.safeLoad(fileContent);
 }
 
 export default Route;
