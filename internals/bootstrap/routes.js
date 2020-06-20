@@ -11,9 +11,7 @@ import express from 'express';
 import path from 'path';
 import fs from 'fs';
 import yaml from 'js-yaml';
-import {
-  compose
-} from 'compose-middleware';
+import { compose } from 'compose-middleware';
 
 const Route = express.Router();
 
@@ -29,7 +27,7 @@ const Route = express.Router();
 
 (function registerRoutes() {
   const routes = parseYmlRoutes();
-  for (let [key, value] of Object.entries(routes)) {
+  for (let value of Object.values(routes)) {
     // default values that each route need.
     const initState = {
       method: 'get',
@@ -62,19 +60,20 @@ const Route = express.Router();
           path: pathMiddleware,
         } = extractFunctionPath(middleware);
         initState.middlewares.push(
-          require(path.resolve(__dirname, '../../', pathMiddleware))[funMiddleware],
+          require(path.resolve(__dirname, '../../', pathMiddleware))[
+            funMiddleware
+          ],
         );
       });
     }
     if (value.hasOwnProperty('controller')) {
-      const {
-        fun: funController,
-        path: pathController,
-      } = extractFunctionPath(value.controller);
+      const { fun: funController, path: pathController } = extractFunctionPath(
+        value.controller,
+      );
       initState.controller = require(path.resolve(
         __dirname,
         '../../',
-        pathController
+        pathController,
       ))[funController];
     }
     if (value.hasOwnProperty('validator')) {
