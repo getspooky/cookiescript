@@ -19,21 +19,18 @@ export class HttpException extends Error {
    *
    * @usageNotes
    * The constructor arguments define the response and the HTTP response status code.
-   * - The `response` argument (required) defines the response body.
+   * - The `message` argument (required) defines the response body.
    * - The `status` argument (required) defines the HTTP Status Code.
-   *
-   * By default, the response body contains two properties:
-   * - `statusCode`: the Http Status Code.
-   * - `message`: a short description of the HTTP error by default; override this
-   * by supplying a string in the `response` parameter.
    *
    * The `status` argument is required, and should be a valid HTTP status code.
    *
-   * @param response string describing the error condition.
+   * @param message string describing the error condition.
    * @param status HTTP response status code.
    */
-  constructor(response, status) {
+  constructor(message, status) {
     super();
+    this.message = message;
+    this.status = status;
   }
 
   /**
@@ -41,7 +38,7 @@ export class HttpException extends Error {
    * @return string
    */
   getResponse() {
-    return this.response;
+    return this.message;
   }
 
   /**
