@@ -9,22 +9,27 @@
 
 import jwt from 'jsonwebtoken';
 import config from 'internals/utils/config';
+import {
+  UnauthorizedException
+} from 'internals/utils/exceptions/unauthorized';
 
 const secret = config('jwt@jwt.secret');
 
 // Verify if the given jwt token is not expired.
-export default function tokenVerification(req, res, next) {
+export function tokenVerification(req, res, next) {
   try {
     const token = req.header('Authorization') || 'Bearer ';
     // set the json web token.
     req.jwtPayload = jwt.verify(
       token
-        .split('Bearer')[1]
-        .trim()
-        .toString(),
-       secret,
+      .split('Bearer')[1]
+      .trim()
+      .toString(),
+      secret,
       (err, decoded) => {
-        if (err) throw new TypeError('The Token provided is invalid');
+        if (err) {
+          throw new UnauthorizedException();
+        }
         return decoded;
       }
     );
