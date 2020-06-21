@@ -112,6 +112,7 @@
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "sweetalert2": "^8.18.5",
+    "tailwindcss": "^1.4.6",
     "uid": "^0.0.2",
     "urlencode": "^1.1.0",
     "winston": "^3.2.1"
