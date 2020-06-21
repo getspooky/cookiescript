@@ -33,7 +33,7 @@ const headers = [
 ];
 
 // Detect proxies.
-export default function detectProxy(req, res, next) {
+export function detectProxy(req, res, next) {
   try {
     if (
       Array.isArray(headers) &&
