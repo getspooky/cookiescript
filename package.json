@@ -1,14 +1,21 @@
 {
   "name": "cookiescript",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A highly scalable, professional boilerplate for building fast, robust and adaptable mern web apps",
   "keywords": [
-    "Nodejs",
     "react",
-    "redux",
-    "mongodb",
-    "mongoose",
-    "express"
+    "nodejs",
+    "express",
+    "boilerplate",
+    "template",
+    "webpack",
+    "i18n",
+    "scaffolding",
+    "cli",
+    "seo-friendly",
+    "seo-optimization",
+    "mern-stack",
+    "react-hooks"
   ],
   "contributors": [
     "Yasser Ameur El Idrissi"
@@ -23,6 +30,8 @@
   "scripts": {
     "start": "webpack-dev-server --open",
     "serve": "nodemon --exec babel-node internals/bootstrap/server.js",
+    "build:css": "postcss views/App.css -o internals/views/tailwindcss/build.css",
+    "watch:css": "views/App.css -o internals/views/tailwindcss/build.css -w",
     "test": "jest --watchAll",
     "build": "webpack",
     "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
@@ -89,6 +98,7 @@
     "multer": "^1.4.2",
     "node-sass": "^4.12.0",
     "nodemailer": "^6.3.0",
+    "postcss-cli": "^7.1.1",
     "prop-types": "^15.7.2",
     "randomstring": "^1.1.5",
     "react": "^16.10.2",
