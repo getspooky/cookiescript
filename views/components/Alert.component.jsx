@@ -13,9 +13,9 @@ import PropTypes from 'prop-types';
 function Alert(props) {
   const { className, message, details } = props;
   return (
-    <div className={`${className} border-l-4 p-4`}>
-      <div className="header">{message}</div>
-      <p>{details}</p>
+    <div className={`${className} border-l-4 p-4`} data-testid='testing-root'>
+      <div className="header" data-testid="testing-header">{message}</div>
+      <p data-testid="testing-details">{details}</p>
     </div>
   );
 }
