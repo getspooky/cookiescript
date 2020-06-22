@@ -20,27 +20,23 @@ beforeAll(function () {
   app.use(url, SayHello);
 });
 
-describe('Testing GET /', function () {
+test('should return 200', done => {
+  request(app)
+    .get(url)
+    .expect(200)
+    .end(function (err, res) {
+      if (err) return done(err);
+      done();
+    });
+});
 
-  it('should return 200', done => {
-    request(app)
-      .get(url)
-      .expect(200)
-      .end(function (err, res) {
-        if (err) return done(err);
-        done();
-      });
-  });
-
-  it('check Content-Type', done => {
-    request(app)
-      .get(url)
-      .set('Accept', 'application/json')
-      .expect('Content-Type', "text/html; charset=utf-8")
-      .end(function (err, res) {
-        if (err) return done(err);
-        done();
-      });
-  });
-
+test('check Content-Type', done => {
+  request(app)
+    .get(url)
+    .set('Accept', 'application/json')
+    .expect('Content-Type', "text/html; charset=utf-8")
+    .end(function (err, res) {
+      if (err) return done(err);
+      done();
+    });
 });

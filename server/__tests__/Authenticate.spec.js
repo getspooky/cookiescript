@@ -43,43 +43,38 @@ afterAll(async function () {
   await unmountDatabase();
 });
 
-describe('Testing GET /register', function () {
 
-  it('should return 201', done => {
+test('should return 201', done => {
 
-    request(app)
-      .post(url.register)
-      .send({
-        username: 'test123456789',
-        email: 'test@gmail.com',
-        password: 'cookiscript_admin'
-      })
-      .set('Accept', 'application/json')
-      .expect(201)
-      .end(function (err, res) {
-        if (err) return done(err);
-        done();
-      });
-  });
-
+  request(app)
+    .post(url.register)
+    .send({
+      username: 'test123456789',
+      email: 'test@gmail.com',
+      password: 'cookiscript_admin'
+    })
+    .set('Accept', 'application/json')
+    .expect(201)
+    .end(function (err, res) {
+      if (err) return done(err);
+      done();
+    });
 });
 
-describe('Testing GET /login', function () {
 
-  it('should return 200', done => {
 
-    request(app)
-      .post(url.login)
-      .send({
-        email: 'test@gmail.com',
-        password: 'cookiscript_admin'
-      })
-      .set('Accept', 'application/json')
-      .expect(200)
-      .end(function (err, res) {
-        if (err) return done(err);
-        done();
-      });
-  });
+test('should return 200', done => {
 
+  request(app)
+    .post(url.login)
+    .send({
+      email: 'test@gmail.com',
+      password: 'cookiscript_admin'
+    })
+    .set('Accept', 'application/json')
+    .expect(200)
+    .end(function (err, res) {
+      if (err) return done(err);
+      done();
+    });
 });

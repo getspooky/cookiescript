@@ -49,46 +49,43 @@ afterAll(async function () {
   await unmountDatabase();
 });
 
-describe('Testing GET /profile', function () {
 
-  it('should create new user and return token', done => {
-    request(app)
-      .post(url.register)
-      .send({
-        username: 'test123456789',
-        email: 'test@gmail.com',
-        password: 'cookiscript_admin'
-      })
-      .set('Accept', 'application/json')
-      .expect(201)
-      .end(function (err, res) {
-        JWTtoken = res.body.data;
-        if (err) return done(err);
-        done();
-      });
-  });
+test('should create new user and return token', done => {
+  request(app)
+    .post(url.register)
+    .send({
+      username: 'test123456789',
+      email: 'test@gmail.com',
+      password: 'cookiscript_admin'
+    })
+    .set('Accept', 'application/json')
+    .expect(201)
+    .end(function (err, res) {
+      JWTtoken = res.body.data;
+      if (err) return done(err);
+      done();
+    });
+});
 
-  it('should return 401', done => {
-    request(app)
-      .get(url.profile)
-      .expect(401)
-      .end(function (err, res) {
-        if (err) return done(err);
-        done();
-      });
-  });
+test('should return 401', done => {
+  request(app)
+    .get(url.profile)
+    .expect(401)
+    .end(function (err, res) {
+      if (err) return done(err);
+      done();
+    });
+});
 
-  it('should return User data', done => {
-    request(app)
-      .get(url.profile)
-      .set('Accept', 'application/json')
-      .expect('Content-Type', /json/)
-      .set('authorization', 'Bearer ' + JWTtoken)
-      .expect(200)
-      .end(function (err, res) {
-        if (err) return done(err);
-        done();
-      });
-  });
-
+test('should return User data', done => {
+  request(app)
+    .get(url.profile)
+    .set('Accept', 'application/json')
+    .expect('Content-Type', /json/)
+    .set('authorization', 'Bearer ' + JWTtoken)
+    .expect(200)
+    .end(function (err, res) {
+      if (err) return done(err);
+      done();
+    });
 });
