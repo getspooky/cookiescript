@@ -7,8 +7,10 @@
  * file that was distributed with this source code.
  */
 
+import '@testing-library/jest-dom'
 import React from 'react';
 import ReactDom from 'react-dom';
+import { render } from '@testing-library/react';
 import Alert from 'views/components/Alert.component';
 
 var props = {
@@ -30,11 +32,10 @@ test('should render component without crash', () => {
 });
 
 test('should render props data', () => {
-  const container = document.createElement('div');
-  ReactDom.render(wrapper, container);
-  expect(container.querySelector('.border-l-4').className).toBe("orange border-l-4 p-4");
-  expect(container.querySelector('.header').textContent).toBe("Be Warned");
-  expect(container.querySelector('p').textContent).toBe("Something not ideal might be happening.");
+  const { getByTestId } = render(wrapper);
+  expect(getByTestId(/testing-root/i)).toHaveClass("orange border-l-4 p-4");
+  expect(getByTestId(/testing-header/i)).toHaveTextContent("Be Warned");
+  expect(getByTestId(/testing-details/i)).toHaveTextContent("Something not ideal might be happening.");
 });
 
 test('should renders correctly', () => {
