@@ -32,7 +32,7 @@
     "serve": "nodemon --exec babel-node internals/bootstrap/server.js",
     "build:css": "postcss views/App.css -o internals/views/tailwindcss/build.css",
     "watch:css": "views/App.css -o internals/views/tailwindcss/build.css -w",
-    "test": "jest --watchAll",
+    "test": "jest --watch",
     "build": "webpack",
     "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
   },
@@ -40,6 +40,8 @@
     "@babel/node": "^7.5.5",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "@testing-library/jest-dom": "^5.10.1",
+    "@testing-library/react": "^10.3.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^3.2.0",
