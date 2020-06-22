@@ -1,5 +1,5 @@
 /*
- * This file is part of the mern-boilerplate project.
+ * This file is part of the CookieScript project.
  *
  * (c) Yasser Ameur El Idrissi <getspookydev@gmail.com>
  *
@@ -7,6 +7,6 @@
  * file that was distributed with this source code.
  */
 
-export function SayHello(req,res,next) {
-  res.send('👋 Welcome to <b>mern-boilerplate</b>');
+export function SayHello(req, res, next) {
+  res.send('👋 Welcome to <b>CookieScript</b>');
 };
