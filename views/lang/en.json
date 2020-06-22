@@ -1,0 +1,20 @@
+{
+  "register.username"          :  "Username",
+  "register.email"             :  "E-mail address",
+  "register.password"          :  "Password",
+  "register.confirm_password"  :  "Confirm Password",
+  "register.agreement"         :  "I accept the terms and conditions",
+  "register.submit"            :  "Register",
+  "login.email"                :  "E-mail address",
+  "login.password"             :  "Password",
+  "login.submit"               :  "Login",
+  "reset.password"             :  "Password",
+  "reset.confirm_password"     :  "Confirm Password",
+  "reset.submit"               :  "Reset Password",
+  "reset.success"              :  "Your password has been changed successfully!",
+  "hero.title"                 :  "Welcome :username",
+  "hero.subtitle"              :  "You are Logged In!",
+  "forgot.email"               :  "E-mail address",
+  "forgot.submit"              :  "Send Password Reset Link",
+  "forgot.success"             :  "Please check your email and click on the provided link to reset password"
+}
