@@ -8,13 +8,25 @@
  */
 
 import i18n from 'i18next';
-import i18nextBrowser from 'i18next-browser-languagedetector';
-import react18Next from 'react-i18next';
+import detector from 'i18next-browser-languagedetector';
+import {
+  reactI18nextModule
+} from 'react-i18next';
+
+// Register all languages.
+const resources = {
+  en: {
+    translation: {
+      ...require('views/lang/en.json'),
+    },
+  },
+};
 
 i18n
-  .use(i18nextBrowser.detector)
-  .use(react18Next.reactI18nextModule)
+  .use(detector)
+  .use(reactI18nextModule)
   .init({
+    resources,
     lng: 'en',
     fallbackLng: 'en', // use en if detected lng is not available
     keySeparator: false, // we do not use keys in form messages.welcome
