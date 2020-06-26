@@ -78,6 +78,10 @@ Before you install `CookieScript`, you should check to make sure that your syste
     _At this point you can run `npm start` to see the example app at `http://localhost:8080`._
 5.  Run `npm run clean` to delete the example app.
 
+## Contributing 
+
+We'd love to have your helping hand on `CookieScript`! See CONTRIBUTING.md for more information on what we're looking for and how to get started.
+
 ## How Can I Help?
 
 - Contribute to the core repository.
