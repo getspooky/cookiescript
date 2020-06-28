@@ -78,6 +78,38 @@ Before you install `CookieScript`, you should check to make sure that your syste
     _At this point you can run `npm start` to see the example app at `http://localhost:8080`._
 5.  Run `npm run clean` to delete the example app.
 
+## Usage 
+
+> The official guide assumes intermediate level knowledge of React, NodeJs, and MongoDB. If you are totally new to MERN development, it might not be the best idea to jump right into a boilerplate as your first step.
+
+🍵 Let us discuss the categories included in the configuration. All of the configuration files for the `CookieScript` boilerplate are stored in the config directory. Each option is documented, so feel free to look through the files and get familiar with the options available to you. <br />
+Example: 
+```yml
+# Application Configuration
+
+# This value is the name of your application. This value is used when the
+# mern-boilerplate needs to place the application's name in a web browser
+# or notification.
+
+default:
+  name: mern-boilerplate
+
+# Application URL
+url:
+  host: 127.0.0.1
+  port: 4200
+
+# Application Environment
+# This value determines the "environment" your application is currently
+# running in.
+# Supported Application Env: production, developement, test
+env:
+  type: environment
+
+```
+
+
+
 ## Contributing 
 
 We'd love to have your helping hand on `CookieScript`! See CONTRIBUTING.md for more information on what we're looking for and how to get started.
