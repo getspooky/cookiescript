@@ -119,6 +119,14 @@ value = config('app@url.port');
 
 > 🚨 `config` helper function does not provide a way to set configuration values at runtime.
 
+☕️ By default, the directory structure of `CookieScript` is meant to meet the requirement for both large and small
+application development.
+
+| Directory     | Description     |
+| ------------- |:---------------:|
+| config        | The config directory holds all project configutation files.  | 
+| public        | he public folder contains the HTML so you can tweak it, The `<scripts>` tag with compiled code will be added to it automatically during the build process. |   
+
 ## Contributing 
 
 We'd love to have your helping hand on `CookieScript`! See CONTRIBUTING.md for more information on what we're looking for and how to get started.
