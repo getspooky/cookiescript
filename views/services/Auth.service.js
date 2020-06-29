@@ -1,5 +1,5 @@
 /*
- * This file is part of the mern-boilerplate project.
+ * This file is part of the CookieScript project.
  *
  * (c) Yasser Ameur El Idrissi <getspookydev@gmail.com>
  *
@@ -7,12 +7,17 @@
  * file that was distributed with this source code.
  */
 
-import vars from 'views/global-vars';
+import {
+  AUTH_REGISTER_URL,
+  AUTH_LOGIN_URL,
+  FORGOT_PASSWORD_URL,
+  RESET_PASSWORD_URL
+} from 'views/global-vars';
 import request from 'internals/views/request';
 
 // Send login request to the application.
 export async function HTTP_REQUEST_LOGIN(payload) {
-  return await request(vars.AUTH_LOGIN_URL, {
+  return await request(AUTH_LOGIN_URL, {
     method: 'POST',
     body: JSON.stringify(payload),
   });
@@ -20,7 +25,7 @@ export async function HTTP_REQUEST_LOGIN(payload) {
 
 // Send register request to the application.
 export async function HTTP_REQUEST_REGISTER(payload) {
-  return await request(vars.AUTH_REGISTER_URL, {
+  return await request(AUTH_REGISTER_URL, {
     method: 'POST',
     body: JSON.stringify(payload),
   });
@@ -28,7 +33,7 @@ export async function HTTP_REQUEST_REGISTER(payload) {
 
 // Send forgot password request to the application.
 export async function HTTP_REQUEST_FORGOT_PASSWORD(payload) {
-  return await fetch(vars.FORGOT_PASSWORD_URL, {
+  return await request(FORGOT_PASSWORD_URL, {
     method: 'PUT',
     body: JSON.stringify(payload),
   });
@@ -36,7 +41,7 @@ export async function HTTP_REQUEST_FORGOT_PASSWORD(payload) {
 
 // Send reset password request to the application.
 export async function HTTP_REQUEST_RESET_PASSWORD(payload) {
-  return await fetch(vars.RESET_PASSWORD_URL, {
+  return await request(RESET_PASSWORD_URL, {
     method: 'PUT',
     body: JSON.stringify(payload),
   });
