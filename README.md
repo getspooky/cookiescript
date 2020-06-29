@@ -108,7 +108,16 @@ env:
 
 ```
 
+You may easily access your configuration values using `config` helper function from anywhere in your application. The configuration values may be accessed using "dot" and "At sign" syntax, which includes the 
+name of the file and option you wish to access.
+A error will be thrown if the configuration option or file does not exist:
 
+```js
+// Retrieve the server's port.
+value = config('app@url.port');
+```
+
+> 🚨 `config` helper function does not provide a way to set configuration values at runtime.
 
 ## Contributing 
 
