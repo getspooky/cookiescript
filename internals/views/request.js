@@ -44,7 +44,17 @@ function checkStatus(response) {
  * @return {object}           The response data
  */
 export default function request(url, options) {
-  return fetch(url, options)
+  const settings = {
+    // manual, *follow, error
+    redirect: 'follow',
+    // *default, no-cache, reload, force-cache, only-if-cached
+    cache: 'no-cache',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    ...options,
+  }
+  return fetch(url, settings)
     .then(checkStatus)
     .then(parseJSON);
 }
