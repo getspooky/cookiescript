@@ -1,5 +1,5 @@
 /*
- * This file is part of the mern-boilerplate project.
+ * This file is part of the CookieScript project.
  *
  * (c) Yasser Ameur El Idrissi <getspookydev@gmail.com>
  *
@@ -7,17 +7,23 @@
  * file that was distributed with this source code.
  */
 
-import vars from 'views/global-vars';
-import services from 'views/services/auth.service';
-import setActionType from 'intenals/views/types';
+import {
+  HTTP_REQUEST_LOGIN,
+  HTTP_REQUEST_REGISTER
+} from 'views/services/Auth.service';
+import {
+  AUTH_LOGIN,
+  AUTH_REGISTER,
+  CLEAR_ERRORS
+} from 'views/global-vars';
 
 // Login action.
 export function loginAction(payload) {
   return async (dispatch, getState) => {
-    const data = await services.HTTP_REQUEST_LOGIN(payload);
+    const data = await HTTP_REQUEST_LOGIN(payload);
     // Dispatch Action.
     dispatch({
-      type: setActionType(data.status, vars.AUTH_LOGIN),
+      type: AUTH_LOGIN,
       payload: await data.json(),
     });
   };
@@ -29,8 +35,8 @@ export function registerAction(payload) {
     const data = await HTTP_REQUEST_REGISTER(payload);
     // Dispatch Action.
     dispatch({
-      type: setActionType(data.status, vars.AUTH_REGISTER),
-      payload: await data.json(),
+      type: AUTH_REGISTER,
+      payload: await data,
     });
   };
 }
