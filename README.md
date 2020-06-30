@@ -125,7 +125,11 @@ application development.
 | Directory     | Description     |
 | ------------- |:---------------:|
 | config        | The config directory holds all project configutation files.  | 
-| public        | he public folder contains the HTML so you can tweak it, The `<scripts>` tag with compiled code will be added to it automatically during the build process. |   
+| public        | The public folder contains the HTML so you can tweak it, The `<scripts>` tag with compiled code will be added to it automatically during the build process.        |   
+| database      | The database directory holds your database files.
+| internals     | The internals directory holds code used under the hood by `CookieScript` like `Error Handling` , `Registering Routes` ...
+| server        | The server directory contains all the server-side code used to implement the REST API.
+| views         | The views directory contains all of the react client code for the project. 
 
 ## Contributing 
 
