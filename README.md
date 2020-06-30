@@ -131,6 +131,38 @@ application development.
 | server        | The server directory contains all the server-side code used to implement the REST API.
 | views         | The views directory contains all of the react client code for the project. 
 
+> 📢  We believe that each mern project is different so you can add customize your directory structure.
+
+🌍 CookieScript's localization features provide a convenient way to retrieve strings in various languages, allowing you to easily support multiple languages within your application.
+Language strings are stored in files within the `views/lang/` directory.
+Within this directory there should be a json file for each language supported by the application:
+
+```json
+{
+  "welcome.title": "🍪 A highly scalable, professional boilerplate for building fast",
+  "welcome.subtitle": "robust and adaptable mern web apps.",
+  "welcome.register": "Sign Up",
+  "welcome.login": "Sign In",
+}
+```
+
+You may retrieve lines from language files using the `lang` function
+For example, let's create a new simple component and retrieving the welcome translation string from the `views/lang/en.json` language file: 
+
+```js
+import React from 'react';
+import { withNamespaces } from 'react-i18next';
+
+function Welcome(props) {
+  const {t:lang} = props;
+  return (
+    <h1>{lang('welcome.title')}</h1>
+  )
+}
+
+export default withNamespaces()(Welcome);
+```
+
 ## Contributing 
 
 We'd love to have your helping hand on `CookieScript`! See CONTRIBUTING.md for more information on what we're looking for and how to get started.
