@@ -62,10 +62,5 @@ module.exports = {
       inject: true,
       template: htmlTemplate,
     }),
-    //
-    new Dotenv({
-      safe: false, // load '.env.example' to verify the '.env' variables are all set. Can also be a string to a different file.
-      silent: false, // hide any errors
-    }),
   ],
 };
