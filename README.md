@@ -163,6 +163,13 @@ function Welcome(props) {
 export default withNamespaces()(Welcome);
 ```
 
+🔐 Authentication is the process of identifying the user credentials. CookieScript makes implementing authentication very simple. In fact, almost everything is configured for you out of the box. At its core, CookieScript's uses [JWT](https://jwt.io/) , The configuration file is located at `config/jwt.yml` which contains several well documented options.
+
+> 🚨 By default `CookieScript` stores the given token inside an <b>httpOnly cookie</b>, a special kind of cookie that’s only sent in HTTP requests to the server, and it’s never accessible (both for reading or writing) from JavaScript running in the browser. 
+
+The ui for authentication are stored in the `views/containers/auth/` directory. 
+All of these views use the [Tailwind CSS](https://tailwindcss.com/), but you are free to customize them however you wish.
+
 ## Contributing 
 
 We'd love to have your helping hand on `CookieScript`! See CONTRIBUTING.md for more information on what we're looking for and how to get started.
