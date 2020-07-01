@@ -169,10 +169,9 @@ export default withNamespaces()(Welcome);
 
 The ui for authentication are stored in the `views/containers/auth/` directory. 
 All of these views use the [Tailwind CSS](https://tailwindcss.com/), but you are free to customize them however you wish.
-
-🚦 Basic Routing
  
-All Server side routes are defined in your route file,
+🚦 Requests are mapped with the help of routes. Basic routing routes the request to the associated controllers.  
+All routes are defined in your route file,
 which is located in the `server` directory.
 The file is automatically loaded internally by the `CookieScript`.
 The `server/Routes.yml` file defines routes that are for your web interface.
@@ -194,9 +193,7 @@ hello:
     - "server/middlewares/Hello@TrimString"
 ```
 
-🚧 Validation
-
-Validation is the most important aspect while designing an application. It validates the incoming data. By default CookieScript uses a `express-validator` package to validate incoming HTTP requests with a variety of powerful validation rules.
+🚧 Validation is the most important aspect while designing an application. It validates the incoming data. By default CookieScript uses a `express-validator` package to validate incoming HTTP requests with a variety of powerful validation rules.
 
 To learn about CookieScript's powerful validation features, let's assume we have the following routes defined in our `server/Routes.yml` file:
 
