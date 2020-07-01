@@ -194,6 +194,64 @@ hello:
     - "server/middlewares/Hello@TrimString"
 ```
 
+🚧 Validation
+
+Validation is the most important aspect while designing an application. It validates the incoming data. By default CookieScript uses a `express-validator` package to validate incoming HTTP requests with a variety of powerful validation rules.
+
+To learn about CookieScript's powerful validation features, let's assume we have the following routes defined in our `server/Routes.yml` file:
+
+```yml
+hello:
+  path: "/create/article"
+  method: "POST"
+  controller: "server/controllers/Article@Store"
+  validator: "server/validators/Article"
+```
+
+Your Hello validator file may look like one of these, which are all valid:
+
+```js
+import { check } from 'express-validator';
+
+// Get the validation rules that apply to the request.
+export function Validator() {
+  return [
+    check('email')
+      .not()
+      .isEmpty()
+      .withMessage('Email is missing')
+      .isEmail()
+      .withMessage('Email is not valid'),
+  ];
+}
+```
+
+> 🚨 Make sure that the function is called `Validator`.
+
+Next, let's take a look at a simple controller that handles these routes. We'll leave the store method empty for now:
+
+```js
+import { validationResult } from 'express-validator';
+import {
+  UnprocessableEntityException
+} from 'internals/utils/exceptions/unprocessable-entity';
+
+export async function Store(req,res,next) {
+  try {
+    // Finds the validation errors in this request and wraps them in an object with handy functions
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      throw new UnprocessableEntityException(
+        JSON.stringify(errors)
+      );
+    }
+    return res.send('Great...');
+  } catch(err) {
+    next(err);
+  }
+}
+```
+
 ## Contributing 
 
 We'd love to have your helping hand on `CookieScript`! See CONTRIBUTING.md for more information on what we're looking for and how to get started.
