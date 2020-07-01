@@ -1,21 +1,20 @@
 # Log Node.js Applications
 
 # Here you may configure the log channels for your application. Out of
-# the box, CookieScript uses the Winston PHP logging library. This gives
+# the box, CookieScript uses the Winston logging library. This gives
 # you a variety of powerful log handlers / formatters to utilize.
 # level: error, warn, info, verbose, debug, silly
 
 exitOnError:
 
 file:
-  level:
-  filename:
+  level: # Logging levels indicate message priority and are denoted by an integer.
+  filename: #filename must be located in tmp folder.
   handleExceptions:
   json:
   maxsize:
   maxFiles:
   colorize:
-
 
 console:
   level:
