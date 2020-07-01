@@ -170,6 +170,30 @@ export default withNamespaces()(Welcome);
 The ui for authentication are stored in the `views/containers/auth/` directory. 
 All of these views use the [Tailwind CSS](https://tailwindcss.com/), but you are free to customize them however you wish.
 
+🚦 Basic Routing
+ 
+All Server side routes are defined in your route file,
+which is located in the `server` directory.
+The file is automatically loaded internally by the `CookieScript`.
+The `server/Routes.yml` file defines routes that are for your web interface.
+For example, you may access the following route by navigating to `http://your-app.test/hello` in your browser:
+
+```yml
+hello:
+  path: "/hello"
+  controller: "server/controllers/Hello@SayHello"
+```
+
+To assign middleware you may use the `middleware` property. Middleware are executed in the order they are listed in the array:
+
+```yml
+hello:
+  path: "/hello"
+  controller: "server/controllers/Hello@SayHello"
+  middlewares:
+    - "server/middlewares/Hello@TrimString"
+```
+
 ## Contributing 
 
 We'd love to have your helping hand on `CookieScript`! See CONTRIBUTING.md for more information on what we're looking for and how to get started.
