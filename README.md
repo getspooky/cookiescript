@@ -249,6 +249,39 @@ export async function Store(req,res,next) {
 }
 ```
 
+💩 Most web applications have specific mechanisms for error handling. Using these, they track errors and exceptions. Logging the errors in a web application helps to track them and in planning a strategy for removing them.
+The log information can be configured in the web application in `config/logging.yml`.
+
+```yml
+# Log Node.js Applications
+
+# Here you may configure the log channels for your application. Out of
+# the box, CookieScript uses the Winston logging library. This gives
+# you a variety of powerful log handlers / formatters to utilize.
+# level: error, warn, info, verbose, debug, silly
+
+exitOnError: true
+
+file:
+  level: 'info' # Logging levels indicate message priority and are denoted by an integer.
+  handleExceptions: true
+  json: true
+  maxsize: 5242880, # 5MB
+  maxFiles: 5
+  colorize: false
+
+console:
+  level: 'debug'
+  handleExceptions: true
+  json: false
+  colorize: true
+```
+
+You will see a message like the following : 
+```js
+{"level":"error","message":"404 - Not Found - /foo - GET - ::ffff:72.80.124.207","timestamp":"2018-03-07T17:40:10.622Z"}
+```
+
 ## Contributing 
 
 We'd love to have your helping hand on `CookieScript`! See CONTRIBUTING.md for more information on what we're looking for and how to get started.
