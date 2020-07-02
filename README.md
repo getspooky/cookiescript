@@ -326,6 +326,38 @@ redis:
   expiration: 638273737
 ```
 
+> 💡 CookieScript makes interacting with `MongoDB` database extremely simple by using [Mongoose](https://mongoosejs.com/)`.
+
+📋 CookieScript is built with testing in mind. In fact, support for testing with [jest](https://jestjs.io/docs) is included out of the box, and a `jest.config.js` file is already setup for your application.
+
+To test your application started with this boilerplate do the following:
+
+* Sprinkle .test.js files directly next to the parts of your application you want to test. (Or in __tests__/ subdirectories, it doesn't really matter as long as they are directly next to those parts and end in `.(test|spec).jsx?`
+
+* Write your unit and component tests in those files.
+
+* Run `npm run test` in your terminal and see all the tests pass! (hopefully)
+
+CookieScript alse provides two helpful functions to make it easier to test your database driven applications.
+First, you may use the `mountDatabase` to connecting the database instance and `unmountDatabase` in order to resetting the database After each test.
+
+```js
+import {
+  mountDatabase,
+  unmountDatabase,
+} from 'internals/testing/database';
+
+beforeAll(async function () {
+  // connect database instance.
+  await mountDatabase();
+});
+
+afterAll(async function () {
+  // destroy and close database.
+  await unmountDatabase();
+});
+```
+
 ## Contributing 
 
 We'd love to have your helping hand on `CookieScript`! See CONTRIBUTING.md for more information on what we're looking for and how to get started.
