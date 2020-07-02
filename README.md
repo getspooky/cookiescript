@@ -282,6 +282,50 @@ You will see a message like the following :
 {"level":"error","message":"404 - Not Found - /foo - GET - ::ffff:72.80.124.207","timestamp":"2018-03-07T17:40:10.622Z"}
 ```
 
+💾 CookieScript makes connecting with databases and running queries extremely simple. Currently we supports two database systems: [MongoDB](https://www.mongodb.com/) and [Redis](https://redis.io/).
+
+The database configuration for your application is located at `config/database.yml`. In this file you may specify
+database settings, such as host, username, and password.
+example :
+
+```yml
+# Here you may specify which of the database connections below you wish
+# to use as your default connection for all database work. Of course
+# you may use many connections at once using the Database library.
+
+default:
+  name: mongodb
+
+# Database Connections
+# Here is the database connection setup for your application.
+# Of course, examples of configuring each database platform that is
+# Supported by CookieScript is shown below to make development simple.
+
+connections:
+  mongodb:
+    db_host: localhost
+    db_port: 27017
+    db_name: CookieScript
+    db_test_name: CookieScriptTest
+    db_user:
+    db_pass:
+    # A full list of options can be found on the MongoDB Node.js driver docs for connect()
+    # http://mongodb.github.io/node-mongodb-native/2.2/api/MongoClient.html#connect
+    options:
+      useCreateIndex: false
+      useNewUrlParser: true
+      useFindAndModify: false
+      useUnifiedTopology: true
+
+# Redis Databases
+# Redis is an open source, fast, and advanced key-value store that also
+# provides a richer body of commands than a typical key-value system
+# such as APC or Memcached. CookieScript uses it in caching.
+
+redis:
+  expiration: 638273737
+```
+
 ## Contributing 
 
 We'd love to have your helping hand on `CookieScript`! See CONTRIBUTING.md for more information on what we're looking for and how to get started.
