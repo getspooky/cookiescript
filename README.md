@@ -363,6 +363,23 @@ One of the biggest benefits of the `CLI` is the rapid scaffolding of the applica
 
 > 🛸 To view a list of all available commands, you may use the list command: `cookiescript --help`
 
+| Command            | Description               |
+| ------------------ |:-------------------------:|
+| coke:controller    | Create a new Controller   |
+| coke:middleware    | Create a new Middleware   |
+| coke:model         | Create a new Model        |
+| coke:validator     | Create a new Validator    |
+| coke:component     | Create a react component  |
+| coke:container     | Create a react container  |
+| coke:lang          | Create a new localization |
+| coke:service       | Create a react service    |
+| coke:action        | Create a redux action     |
+| coke:reducer       | Create a redux reducer    |
+
+In addition to the commands provided with CookieScript, you may alse build your own custom commands. Commands 
+are typically stored in the `commands` directory.
+
+> 🚨 Stubs must be stored in `internals/stubs` directory.
 
 ## Contributing 
 
