@@ -326,7 +326,7 @@ redis:
   expiration: 638273737
 ```
 
-> 💡 CookieScript makes interacting with `MongoDB` database extremely simple by using [Mongoose](https://mongoosejs.com/)`.
+> 💡 CookieScript makes interacting with `MongoDB` database extremely simple by using [Mongoose](https://mongoosejs.com/).
 
 📋 CookieScript is built with testing in mind. In fact, support for testing with [jest](https://jestjs.io/docs) is included out of the box, and a `jest.config.js` file is already setup for your application.
 
@@ -357,6 +357,12 @@ afterAll(async function () {
   await unmountDatabase();
 });
 ```
+
+📟 CookieScript provides  a number of helpful commands that can assist you while you build your application. 
+One of the biggest benefits of the `CLI` is the rapid scaffolding of the application. It allows you to generate `controllers`, `routes`, `models` and more with a simple generate command.
+
+> 🛸 To view a list of all available commands, you may use the list command: `cookiescript --help`
+
 
 ## Contributing 
 
