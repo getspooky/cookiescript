@@ -1,4 +1,4 @@
-<img src="docs/media/Hello.png" width="100%">
+<img src="./Cover.png" width="100%">
 
 <sub>Created by <a href="https://github.com/getspooky">getspooky</a> and maintained with ❤️ by an amazing <a href="https://github.com/getspooky/CookieScript/graphs/contributors">team of developers</a>.</sub>
 
