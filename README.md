@@ -92,7 +92,7 @@ Example:
 # or notification.
 
 default:
-  name: mern-boilerplate
+  name: CookieScript Demo
 
 # Application URL
 url:
@@ -386,7 +386,7 @@ export default function App() {
 
 ## Contributing 
 
-We'd love to have your helping hand on `CookieScript`! See CONTRIBUTING.md for more information on what we're looking for and how to get started.
+Whether you're helping us fix bugs, improve the docs, or spread the word, we'd love to have you as part of the `CookieScript` community! 💪💜  See CONTRIBUTING.md for more information on what we're looking for and how to get started.
 
 ## How Can I Help?
 
