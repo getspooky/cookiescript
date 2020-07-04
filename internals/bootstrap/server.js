@@ -11,6 +11,7 @@ import http from 'http';
 import app from 'server/App';
 import helmet from 'helmet';
 import config from 'internals/utils/config';
+import cors from 'cors';
 import routes from './routes'
 import logger from './logger';
 import ehandler from './ehandler';
@@ -26,6 +27,10 @@ import database from './dbcon';
 | leanr more : https://nodejs.org/api/https.html
 |
 */
+
+// enable CORS with various options.
+// see documentation: https://www.npmjs.com/package/cors
+app.use(cors(config('cors@options')));
 
 // set various HTTP headers to help protect your server
 app.use(helmet());
