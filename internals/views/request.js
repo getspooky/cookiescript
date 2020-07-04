@@ -25,14 +25,15 @@ function parseJSON(response) {
  *
  * @return {object|undefined} Returns either the response, or throws an error
  */
-function checkStatus(response) {
+async function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
     return response;
   }
-
-  const error = new TypeError(response.statusText);
-  error.response = response;
-  throw error;
+  const {
+    errors,
+  } = await response.json();
+  // Here you can add additional information.
+  throw new TypeError(errors.message);
 }
 
 /**
@@ -45,8 +46,6 @@ function checkStatus(response) {
  */
 export default function request(url, options) {
   const settings = {
-    // manual, *follow, error
-    redirect: 'follow',
     // *default, no-cache, reload, force-cache, only-if-cached
     cache: 'no-cache',
     headers: {
