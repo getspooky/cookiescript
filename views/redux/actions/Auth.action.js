@@ -24,7 +24,7 @@ export function loginAction(payload) {
     // Dispatch Action.
     dispatch({
       type: AUTH_LOGIN,
-      payload: await data.json(),
+      payload: await data,
     });
   };
 }
