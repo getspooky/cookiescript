@@ -11,6 +11,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Form from 'internals/views/components/form';
 import InjectRedux from 'internals/views/injector';
+import { Redirect } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 function Register(props) {
   // @state
@@ -29,51 +31,67 @@ function Register(props) {
     });
   };
 
-  const onSubmitRegister = e => registerAction(value);
+  const onSubmitRegister = e => {
+    return registerAction(value)
+      .then(res =>
+        <Redirect to={'/profile'} />
+      ).catch(({ message }) =>
+        alert(message)
+      );
+  };
 
   return (
-    <Form submit={onSubmitRegister}>
-      <h1 className="text-gray-700 text-center font-sans text-2xl font-bold mb-2">{lang('register.title')}</h1>
-      <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">{lang('register.username')}</label>
-        <input
-          type="text"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="username"
-          name="username"
-          required={true}
-          autoComplete="off"
-          onChange={onInputChange}
-          placeholder="getspooky"
+    <>
+      <Helmet>
+        <title>Register Page</title>
+        <meta
+          name="description"
+          content="CookieScript Register Page"
         />
-      </div>
-      <div className="mb-6">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">{lang('register.email')}</label>
-        <input
-          type="email"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="email"
-          name="email"
-          required={true}
-          autoComplete="off"
-          onChange={onInputChange}
-          placeholder="@gmail.com"
-        />
-      </div>
-      <div className="mb-6">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">{lang('register.password')}</label>
-        <input
-          type="password"
-          className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          id="password"
-          name="password"
-          required={true}
-          autoComplete="off"
-          onChange={onInputChange}
-          placeholder="********"
-        />
-      </div>
-    </Form>
+      </Helmet>
+      <Form submit={onSubmitRegister}>
+        <h1 className="text-gray-700 text-center font-sans text-2xl font-bold mb-2">{lang('register.title')}</h1>
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">{lang('register.username')}</label>
+          <input
+            type="text"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username"
+            name="username"
+            required={true}
+            autoComplete="off"
+            onChange={onInputChange}
+            placeholder="getspooky"
+          />
+        </div>
+        <div className="mb-6">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">{lang('register.email')}</label>
+          <input
+            type="email"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="email"
+            name="email"
+            required={true}
+            autoComplete="off"
+            onChange={onInputChange}
+            placeholder="@gmail.com"
+          />
+        </div>
+        <div className="mb-6">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">{lang('register.password')}</label>
+          <input
+            type="password"
+            className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            id="password"
+            name="password"
+            required={true}
+            autoComplete="off"
+            onChange={onInputChange}
+            placeholder="********"
+          />
+        </div>
+      </Form>
+    </>
   );
 }
 
