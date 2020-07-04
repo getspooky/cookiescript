@@ -13,8 +13,9 @@ import {
 } from 'express-validator';
 import User from 'server/models/User';
 import {
-  UnprocessableEntityException
-} from 'internals/utils/exceptions/unprocessable-entity.js';
+  UnprocessableEntityException,
+  ConflictException
+} from 'internals/utils/exceptions';
 import config from 'internals/utils/config';
 
 const expiration = config('jwt@jwt.expiration');
@@ -26,9 +27,7 @@ export const login = async function (req, res, next) {
     // Finds the validation errors in this request and wraps them in an object with handy functions
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      throw new UnprocessableEntityException(
-        JSON.stringify(errors)
-      );
+      throw new UnprocessableEntityException("Failure! Please check your inputs");
     }
     // Get the login credentials from the request.
     const {
@@ -62,9 +61,7 @@ export const register = async function (req, res, next) {
     // Finds the validation errors in this request and wraps them in an object with handy functions
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      throw new UnprocessableEntityException(
-        JSON.stringify(errors)
-      );
+      throw new UnprocessableEntityException("Failure! Please check your inputs");
     }
     // Get the register credentials from the request.
     const {
@@ -76,7 +73,7 @@ export const register = async function (req, res, next) {
     if (await User.findOne({
         email
       })) {
-      throw new TypeError(
+      throw new ConflictException(
         'Account already exists!, Please Try Again'
       );
     } else {
