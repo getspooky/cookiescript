@@ -21,8 +21,6 @@ const initState = {
     isLoaded: false,
     // Get token from localStorage.
     token: localStorage.getItem('_token'),
-    // Get User Information
-    user: null,
   },
 };
 
@@ -39,7 +37,7 @@ function authReducer(state = initState, {
           ...state,
           isAuthenticated: true,
           isLoaded: true,
-          token: payload.data.token,
+          token: payload.data,
         },
       };
       break;
