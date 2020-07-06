@@ -24,5 +24,6 @@
   "profile.subtitle": "You are Logged In!",
   "forgot.title": "Forgot Password Here 👇",
   "forgot.email": "E-mail address",
-  "forgot.success": "Please check your email and click on the provided link to reset password"
+  "forgot.success": "Please check your email and click on the provided link to reset password",
+  "Profile.sayHello": "Hello :name we'd love to have you as part of the CookieScript community! 👋💜"
 }
