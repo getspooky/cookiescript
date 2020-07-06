@@ -10,7 +10,6 @@
 import {
   AUTH_REGISTER,
   AUTH_LOGIN,
-  LOAD_USER,
   AUTH_LOGOUT
 } from 'views/global-vars';
 
@@ -40,6 +39,8 @@ function authReducer(state = initState, {
           token: payload.data,
         },
       };
+      // Set the token in localStorage
+      localStorage.setItem('_token', payload.data);
       break;
     case AUTH_LOGOUT:
       // Remove token from localStorage.
