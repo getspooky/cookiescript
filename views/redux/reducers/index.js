@@ -15,8 +15,8 @@ import ProfileReducer from './Profile.reducer';
 
 // Combine all reducers
 const rootReducer = combineReducers({
-  AUTH_REDUCER: AuthReducer,
-  PROFILE_REDUCER: ProfileReducer
+  AuthReducer,
+  ProfileReducer
 });
 
 export default rootReducer;
