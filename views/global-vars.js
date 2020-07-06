@@ -1,5 +1,5 @@
 /*
- * This file is part of the mern-boilerplate project.
+ * This file is part of the CookieScript project.
  *
  * (c) Yasser Ameur El Idrissi <getspookydev@gmail.com>
  *
@@ -8,7 +8,7 @@
  */
 
 // Base URL
-const BASE_URL = `${process.env.REACT_APP_HOST}/api`;
+const BASE_URL = null;
 
 // Auth URLs
 export const AUTH_LOGIN_URL = `${BASE_URL}/login`;
@@ -21,4 +21,4 @@ export const PROFILE_URL = `${BASE_URL}/profile`;
 export const AUTH_REGISTER = 'AUTH_REGISTER';
 export const AUTH_LOGIN = 'AUTH_LOGIN';
 export const AUTH_LOGOUT = 'AUTH_LOGOUT';
-export const PROFILE = 'PROFILE';
+export const LOAD_PROFILE = 'LOAD_PROFILE';
