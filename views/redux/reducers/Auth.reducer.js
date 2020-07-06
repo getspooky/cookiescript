@@ -7,31 +7,50 @@
  * file that was distributed with this source code.
  */
 
-import { AUTH_REGISTER, AUTH_LOGIN, AUTH_LOGOUT } from 'views/global-vars';
+import {
+  AUTH_REGISTER,
+  AUTH_LOGIN,
+  LOAD_USER,
+  AUTH_LOGOUT
+} from 'views/global-vars';
 
 // initial state.
 const initState = {
   Auth: {
     isAuthenticated: false,
+    isLoaded: false,
     // Get token from localStorage.
     token: localStorage.getItem('_token'),
+    // Get User Information
+    user: null,
   },
 };
 
 // Auth Reducer.
-function authReducer(state = initState, {type, payload}) {
+function authReducer(state = initState, {
+  type,
+  payload
+}) {
   switch (type) {
     case AUTH_REGISTER:
     case AUTH_LOGIN:
       state = {
-        Auth: { isAuthenticated: true, token: payload.data },
+        Auth: {
+          ...state,
+          isAuthenticated: true,
+          isLoaded: true,
+          token: payload.data.token,
+        },
       };
       break;
     case AUTH_LOGOUT:
       // Remove token from localStorage.
       localStorage.removeItem('_token');
       state = {
-        Auth: { isAuthenticated: false, token: null },
+        Auth: {
+          isAuthenticated: false,
+          token: null
+        },
       };
       break;
   }
