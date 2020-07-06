@@ -24,7 +24,7 @@ export function loginAction(payload) {
     // Dispatch Action.
     dispatch({
       type: AUTH_LOGIN,
-      payload: await data,
+      payload: data,
     });
   };
 }
@@ -36,7 +36,7 @@ export function registerAction(payload) {
     // Dispatch Action.
     dispatch({
       type: AUTH_REGISTER,
-      payload: await data,
+      payload: data,
     });
   };
 }
