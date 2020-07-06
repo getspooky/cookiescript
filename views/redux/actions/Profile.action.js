@@ -1,5 +1,5 @@
 /*
- * This file is part of the mern-boilerplate project.
+ * This file is part of the CookieScript project.
  *
  * (c) Yasser Ameur El Idrissi <getspookydev@gmail.com>
  *
@@ -9,7 +9,7 @@
 
 import {
   HTTP_REQUEST_PROFILE
-} from 'views/services/Profile.action';
+} from 'views/services/Profile.service';
 import {
   LOAD_PROFILE
 } from 'views/global-vars';
@@ -17,7 +17,7 @@ import {
 // Profile Action.
 export function profileAction() {
   return async (dispatch, getState) => {
-    const token = getState().Auth.token;
+    const token = getState().AuthReducer.Auth.token;
     const data = await HTTP_REQUEST_PROFILE(token);
     // Dispatch Action.
     dispatch({
