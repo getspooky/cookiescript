@@ -18,6 +18,7 @@ export async function HTTP_REQUEST_PROFILE(token) {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json'
     },
   });
 }
