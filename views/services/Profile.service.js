@@ -1,5 +1,5 @@
 /*
- * This file is part of the mern-boilerplate project.
+ * This file is part of the CookieScript project.
  *
  * (c) Yasser Ameur El Idrissi <getspookydev@gmail.com>
  *
@@ -7,17 +7,17 @@
  * file that was distributed with this source code.
  */
 
-import vars from 'views/global-vars';
+import {
+  PROFILE_URL
+} from 'views/global-vars';
 import request from 'internals/views/request';
 
 // Fetch the user's profile.
-async function HTTP_REQUEST_PROFILE(token) {
-  return await request(vars.PROFILE_URL, {
+export async function HTTP_REQUEST_PROFILE(token) {
+  return await request(PROFILE_URL, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
 }
-
-export default HTTP_REQUEST_PROFILE;
