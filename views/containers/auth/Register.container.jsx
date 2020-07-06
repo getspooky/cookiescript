@@ -11,7 +11,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Form from 'internals/views/components/form';
 import InjectRedux from 'internals/views/injector';
-import { Redirect } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 
 function Register(props) {
@@ -22,7 +21,7 @@ function Register(props) {
     password: null,
   });
 
-  const { t: lang, registerAction } = props;
+  const { t: lang, history, registerAction } = props;
 
   const onInputChange = e => {
     return setValue({
@@ -33,8 +32,8 @@ function Register(props) {
 
   const onSubmitRegister = e => {
     return registerAction(value)
-      .then(res =>
-        <Redirect to={'/profile'} />
+      .then(() =>
+        history.push('/profile')
       ).catch(({ message }) =>
         alert(message)
       );
@@ -81,7 +80,7 @@ function Register(props) {
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">{lang('register.password')}</label>
           <input
             type="password"
-            className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             id="password"
             name="password"
             required={true}
@@ -96,7 +95,8 @@ function Register(props) {
 }
 
 Register.propTypes = {
-  t: PropTypes.func.isRequired
+  t: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired
 };
 
 export default InjectRedux(Register);
