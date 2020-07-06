@@ -15,7 +15,7 @@
 //   /!\ DO NOT MODIFY THIS FILE /!\
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
-// The only job of create-react-app is to init the repository and then
+// The only job of this is to init the repository and then
 // forward all the commands to the local version of CookieScript.
 //
 // The only reason to modify this file is to add more warnings and
