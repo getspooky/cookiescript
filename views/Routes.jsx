@@ -10,6 +10,7 @@
 import Welcome from './containers/Welcome.container.jsx';
 import Register from './containers/auth/Register.container.jsx';
 import Login from './containers/auth/Login.container';
+import Profile from './containers/Profile.container';
 
 // registering all routes.
 const Routes = [
@@ -28,6 +29,12 @@ const Routes = [
     name: 'login',
     component: Login,
   },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: Profile,
+    private: true
+  }
 ];
 
 export default Routes;
