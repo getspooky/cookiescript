@@ -18,7 +18,7 @@ function InjectRedux(WrappedComponent, mapStateToProps = null) {
   }
   const injector = (props) => <WrappedComponent {...props} />
   // resolving action. Make sure that all actions must located at redux/action folder.
-  const mapDispatchToProps = { ...require('../../views/redux/actions/Auth.action') };
+  const mapDispatchToProps = { ...require('../../views/redux/actions/') };
   return connect(mapStateToProps, mapDispatchToProps)(withNamespaces()(injector));
 }
 
