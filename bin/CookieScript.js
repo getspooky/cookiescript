@@ -9,15 +9,15 @@
 
 const path = require('path');
 const fs = require('fs');
-const execSync = require('child_process').spawnSync;
+const execSync = require('child_process').execSync;
 const compareVersions = require('compare-versions');
 const commander = require('commander');
 const chalk = require('chalk');
 const packageJson = require('../package.json');
 
 // Npm and Yarn minimal version.
-var minimalNPMVersion = packageJson.engine.npm;
-var minimalYarnVersion = packageJson.engine.yarn;
+var minimalNPMVersion = packageJson.engines.npm;
+var minimalYarnVersion = packageJson.engines.yarn;
 
 // If the project is generated successfully , let's remove unnecessary files.
 var removeFiles = new Set([
@@ -61,7 +61,7 @@ function createCookieScript(directory, useYarn = false) {
     npmVersion = execSync('npm --version')
       .toString()
       .trim();
-    if (compareVersions(npmVersion, minimalNPMVersion) === -1) {
+    if (compareVersions(npmVersion, minimalNPMVersion) !== -1) {
       console.log();
       console.log(`Npm version compatible ${chalk.green('✓')}`);
     } else {
@@ -75,7 +75,7 @@ function createCookieScript(directory, useYarn = false) {
   yarnVersion = execSync('yarn --version')
     .toString()
     .trim();
-  if (compareVersions(yarnVersion, minimalYarnVersion) === -1) {
+  if (compareVersions(yarnVersion, minimalYarnVersion) !== -1) {
     console.log();
     console.log(`Yarn version compatible ${chalk.green('✓')}`);
   } else {
@@ -87,7 +87,7 @@ function createCookieScript(directory, useYarn = false) {
   }
   // Check GitHub CookieScript repository is cloned.
   // https://github.com/getspooky/CookieScript.git
-  const isRepositoryCloned = exec('git remote -v').split(/\n/)
+  const isRepositoryCloned = execSync('git remote -v').toString().split(/\n/)
     .map((line) => line.trim())
     .filter((line) => line.startsWith('origin'))
     .filter((line) => new RegExp(/getspooky\/CookieScript\.git/).test(line));
@@ -107,7 +107,7 @@ function createCookieScript(directory, useYarn = false) {
     }
   });
   // Install Packages using Yarn Or Npm.
-  const pkgInstall = exec(`${!useYarn ? 'npm' : 'yarn'} install`);
+  const pkgInstall = execSync(`${!useYarn ? 'npm' : 'yarn'} install`);
   if (!pkgInstall) {
     console.log();
     console.error('Something went wrong during installation');
