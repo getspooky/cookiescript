@@ -4,7 +4,7 @@
 
 ![GitHub](https://img.shields.io/github/license/getspooky/CookieScript?style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/getspooky/CookieScript?style=for-the-badge)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/getspooky/CookieScript?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues-raw/getspooky/CookieScript?style=for-the-badge)
 
 CookieScript Boilerplate uses familiar tools and implements best practices around them to provide you a SOLID development experience.
 This project does not impose a specific development philosophy or framework, so you're free to architect your code in the way that you want.
