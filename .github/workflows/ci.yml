@@ -1,0 +1,15 @@
+name: Continuous Integration
+on: [pull_request]
+jobs:
+  Test:
+    name: Testing CookieScript
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      - name: Install Dependencies
+        run: npm ci
+      - name: Test
+        run: npm run test
