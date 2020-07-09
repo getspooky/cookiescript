@@ -22,10 +22,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/getspooky/Mernless.git"
+    "url": "git+https://github.com/getspooky/CookieScript.git"
   },
   "bugs": {
-    "url": "https://github.com/getspooky/Mernless/issues"
+    "url": "https://github.com/getspooky/CookieScript/issues"
   },
   "engines": {
     "npm": "5.2.0",
