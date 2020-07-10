@@ -86,13 +86,6 @@ function createCookieScript(directory, useYarn = false) {
     console.error('CookieScript repository not found');
     process.exit(0);
   }
-  // Install Packages using Yarn Or Npm.
-  console.log(chalk.cyan('Installing packages...'));
-  const pkgInstall = execSync(`cd ${directory} & ${!useYarn ? 'npm' : 'yarn'} install`);
-  if (!pkgInstall) {
-    console.error('Something went wrong during installation');
-    process.exit(0);
-  }
   console.log(chalk.green('Success! App created at ' + directory));
   console.log('Inside that directory, you can run several commands : ');
   console.log(
